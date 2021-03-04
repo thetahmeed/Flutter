@@ -25,10 +25,11 @@ class HomePage extends StatelessWidget {
         padding: EdgeInsets.all(12),
         height: 80,
         width: 120,
-        decoration: BoxDecoration(
-          color: Colors.indigo,
-          borderRadius: BorderRadius.circular(10)
-          ),
+        foregroundDecoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage("https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg"),
+            )
+        ),
         child: Text("Text on container"),
       )
     );
