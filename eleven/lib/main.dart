@@ -3,7 +3,6 @@
 
 
 
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +19,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
-      body: Container(
+      body: Row(
+        children: [
+          Container(
         margin: EdgeInsets.only(left: 12),
         padding: EdgeInsets.all(12),
         height: 80,
@@ -31,7 +32,21 @@ class HomePage extends StatelessWidget {
             )
         ),
         child: Text("Text on container"),
-      )
+      ),
+      Container(
+        margin: EdgeInsets.only(left: 12),
+        padding: EdgeInsets.all(12),
+        height: 80,
+        width: 120,
+        foregroundDecoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage("https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg"),
+            )
+        ),
+        child: Text("Text on container"),
+      ),
+      ],
+        )
     );
   }
 }
