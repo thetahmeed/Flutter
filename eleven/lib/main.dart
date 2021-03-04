@@ -25,19 +25,18 @@ class HomePage extends StatelessWidget {
         margin: EdgeInsets.only(top: 12),
         padding: EdgeInsets.all(12),
         height: 80,
-        width: 120,
-        foregroundDecoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage("https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg"),
-            )
-        ),
-        child: Text("Text on container"),
+        width: 100,
+        child: Icon(Icons.warning),
+        decoration: BoxDecoration(
+          color: Colors.indigo,
+          borderRadius: BorderRadius.circular(10)
+          ),
       ),
       Container(
         margin: EdgeInsets.only(top: 12),
         padding: EdgeInsets.all(12),
         height: 80,
-        width: 120,
+        width: 100,
         foregroundDecoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage("https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg"),
@@ -46,7 +45,7 @@ class HomePage extends StatelessWidget {
         child: Text("Text on container"),
       ),
       ],
-        )
+     )
     );
   }
 }
