@@ -19,10 +19,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
-      body: Row(
+      body: Column(
         children: [
           Container(
-        margin: EdgeInsets.only(left: 12),
+        margin: EdgeInsets.only(top: 12),
         padding: EdgeInsets.all(12),
         height: 80,
         width: 120,
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
         child: Text("Text on container"),
       ),
       Container(
-        margin: EdgeInsets.only(left: 12),
+        margin: EdgeInsets.only(top: 12),
         padding: EdgeInsets.all(12),
         height: 80,
         width: 120,
