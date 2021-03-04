@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final _longText =
-    "Trust me or not but this is a very very very very long text. Not very big. But big";
+    "Trust me or not\n\n\n but this is a very very\n\n very very long text.\n\n\n Not very big. But big";
 
 void main() {
   runApp(MaterialApp(
@@ -17,38 +17,11 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("AppBar Title"),
         ),
-        body: Column(
+        body: ListView(
           children: [
-
-            Image.asset("assets/images/guns.png"), 
-
-            Container(
-              child: Text(_longText),
-              padding: EdgeInsets.all(10),
-            ),
-
-            Container(
-              margin: EdgeInsets.only(top: 12),
-              padding: EdgeInsets.all(12),
-              height: 80,
-              width: 100,
-              child: Icon(Icons.warning),
-              decoration: BoxDecoration(
-                  color: Colors.indigo,
-                  borderRadius: BorderRadius.circular(10)),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 12),
-              padding: EdgeInsets.all(12),
-              height: 80,
-              width: 100,
-              foregroundDecoration: BoxDecoration(
-                  image: DecorationImage(
-                image: NetworkImage(
-                    "https://fujifilm-x.com/wp-content/uploads/2019/08/x-t30_sample-images02.jpg"),
-              )),
-              child: Text("Text on container"),
-            ),
+            Text(_longText),
+            Text(_longText),
+            Text(_longText),
           ],
         ));
   }
