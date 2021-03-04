@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
         title: Text("AppBar Title"),
       ),
       body: Center(
-        child: Text("Body Text"),
+        child: Text("Body Text", textAlign: TextAlign.center,),
         ),
     );
   }
