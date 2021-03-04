@@ -20,7 +20,8 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
         child: Text("Body Text", 
         textAlign: TextAlign.center,
         style: TextStyle(
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
           fontStyle: FontStyle.italic
           ),
         ),
-        ),
+      )
     );
   }
 }
