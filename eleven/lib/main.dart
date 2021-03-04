@@ -21,7 +21,14 @@ class HomePage extends StatelessWidget {
         title: Text("AppBar Title"),
       ),
       body: Center(
-        child: Text("Body Text", textAlign: TextAlign.center,),
+        child: Text("Body Text", 
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Colors.red,
+          fontSize: 30,
+          fontStyle: FontStyle.italic
+          ),
+        ),
         ),
     );
   }
