@@ -20,7 +20,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
-      body: Text("Body Text"),
+      body: Center(
+        child: Text("Body Text"),
+        ),
     );
   }
 }
