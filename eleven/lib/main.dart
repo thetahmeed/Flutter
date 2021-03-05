@@ -17,12 +17,11 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("AppBar Title"),
         ),
-        body: ListView(
+        body: Stack(
           children: [
-            Text(_longText),
-            Text(_longText),
-            Text(_longText),
-          ],
+            Image.asset("assets/images/dp2.jpg"),
+            Text("21315", style: TextStyle(color: Colors.white),)
+            ],
         ));
   }
 }
