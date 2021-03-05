@@ -17,16 +17,24 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("AppBar Title"),
         ),
-        body: Stack(
+        body: Column(
           children: [
-            Image.asset("assets/images/dp2.jpg"),
-
-            Positioned(
-              bottom: 40,
-              left: 40,
-              child: Text("21315", style: TextStyle(color: Colors.white),)
-            )
-
+            Stack(
+              children: [
+                Image.asset("assets/images/dp2.jpg"),
+                Positioned(
+                    bottom: 40,
+                    left: 40,
+                    child: Text(
+                      "21315",
+                      style: TextStyle(color: Colors.white),
+                    ))
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Text("ufiwhifi"),
           ],
         ));
   }
