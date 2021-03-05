@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 final _longText =
     "Trust me or not\n\n\n but this is a very very\n\n very very long text.\n\n\n Not very big. But big";
 
+Widget _makeAGap(){
+  return SizedBox(
+    width: 10,
+  );
+}
+
 void main() {
   runApp(MaterialApp(
     title: "Eleven",
@@ -19,18 +25,6 @@ class HomePage extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Stack(
-              children: [
-                Image.asset("assets/images/dp2.jpg"),
-                Positioned(
-                    bottom: 40,
-                    left: 40,
-                    child: Text(
-                      "21315",
-                      style: TextStyle(color: Colors.white),
-                    ))
-              ],
-            ),
             SizedBox(
               height: 40,
             ),
@@ -57,13 +51,20 @@ class HomePage extends StatelessWidget {
                   height: 100,
                   decoration: BoxDecoration(color: Colors.red),
                 ),
+
+                _makeAGap(),
+
                 Expanded(
                   child: Container(
+                    child: Icon(Icons.face, color: Colors.white,),
                     width: 100,
                     height: 100,
                     decoration: BoxDecoration(color: Colors.green),
                   ),
                 ),
+
+                _makeAGap(),
+
                 Container(
                   width: 100,
                   height: 100,
