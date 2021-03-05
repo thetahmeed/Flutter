@@ -34,7 +34,17 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Text("ufiwhifi"),
+            Text("Orange", style: TextStyle(color: Colors.orange, fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              width: 120,
+              height: 120,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.pink
+                ),
+              ),
+            )
           ],
         ));
   }
