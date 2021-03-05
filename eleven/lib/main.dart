@@ -34,16 +34,42 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Text("Orange", style: TextStyle(color: Colors.orange, fontSize: 30, fontWeight: FontWeight.bold),
+            Text(
+              "Orange",
+              style: TextStyle(
+                  color: Colors.orange,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(
               width: 120,
               height: 120,
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.pink
+                  color: Colors.pink,
                 ),
               ),
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(color: Colors.red),
+                ),
+                Expanded(
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(color: Colors.green),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(color: Colors.purple),
+                ),
+              ],
             )
           ],
         ));
