@@ -20,8 +20,14 @@ class HomePage extends StatelessWidget {
         body: Stack(
           children: [
             Image.asset("assets/images/dp2.jpg"),
-            Text("21315", style: TextStyle(color: Colors.white),)
-            ],
+
+            Positioned(
+              bottom: 40,
+              left: 40,
+              child: Text("21315", style: TextStyle(color: Colors.white),)
+            )
+
+          ],
         ));
   }
 }
