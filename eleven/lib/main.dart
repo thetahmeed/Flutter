@@ -19,8 +19,81 @@ Widget _makeAGap() {
 void main() {
   runApp(MaterialApp(
     title: "Eleven",
-    home: HomePage(),
+    home: HomePage2(),
   ));
+}
+
+class HomePage2 extends StatefulWidget {
+  @override
+  _HomePage2State createState() => _HomePage2State();
+}
+
+class _HomePage2State extends State<HomePage2> {
+  String _changableText = "0";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("AppBar Title"),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            Container(
+              height: 200,
+              decoration: BoxDecoration(color: Colors.pinkAccent),
+              child: Center(
+                child: Text(
+                  "Menu",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.face),
+              title: Text("Profile"),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.mail),
+              title: Text("Mail"),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.build),
+              title: Text("Setting"),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Exit"),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: Text(_changableText),
+          ),
+          ElevatedButton(
+            child: Text("Click here"),
+            onPressed: () {
+              setState(() {
+                _changableText = "Tahmeedul Islam";
+              });
+            },
+          )
+        ],
+      ),
+    );
+  }
 }
 
 class HomePage extends StatelessWidget {
@@ -71,48 +144,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [
-
-          Material(
-            elevation: 10,
-            child: Card(
-              child: Column(
-                children: [
-                  Image.asset("assets/images/dp2.jpg"),
-                  Text(
-                    "Name: Tahmeedul Islam",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
-                  Text(
-                    "Name: Tahmeedul Islam",
-                    style: TextStyle(fontSize: 20),
-                  )
-                ],
-              ),
-            ),
-          ),
-
-          Divider(),
-
-          Card(
-              child: Column(
-                // to make gravity center of all elemnts of the column
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset("assets/images/dp2.jpg"),
-                  Text(
-                    "Name: Tahmeedul Islam",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
-                  Text(
-                    "Name: Tahmeedul Islam",
-                    style: TextStyle(fontSize: 20),
-                  )
-                ],
-              ),
-            ),
-        ],
+        children: [Text("Hello")],
       ),
     );
   }
