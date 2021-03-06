@@ -29,7 +29,6 @@ class HomePage2 extends StatefulWidget {
 }
 
 class _HomePage2State extends State<HomePage2> {
-  
   int _myCounter = 0;
 
   @override
@@ -78,19 +77,64 @@ class _HomePage2State extends State<HomePage2> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.delete),
+        onPressed: () {
+          setState(() {
+            _myCounter--;
+          });
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      
       body: Column(
         children: [
           Center(
             child: Text(_myCounter.toString()),
           ),
-          ElevatedButton(
-            child: Text("Click here"),
+          RaisedButton(
+            elevation: 10,
+            child: Text("Raised Button (Shouldn't be used)"),
             onPressed: () {
               setState(() {
-                _myCounter = _myCounter+1;
+                _myCounter++;
               });
             },
-          )
+          ),
+          ElevatedButton(
+            child: Text("Elevated Button"),
+            onPressed: () {
+              setState(() {
+                _myCounter++;
+              });
+            },
+          ),
+          FlatButton(
+            child: Text("Flat Button (Shouldn't be used)"),
+            onPressed: () {
+              setState(() {
+                _myCounter++;
+              });
+            },
+          ),
+          TextButton(
+            child: Text("Text Button"),
+            onPressed: () {
+              setState(() {
+                _myCounter++;
+              });
+            },
+          ),
+          IconButton(
+              icon: Icon(
+                Icons.save,
+                color: Colors.blue,
+              ),
+              onPressed: () {
+                setState(() {
+                  _myCounter++;
+                });
+              })
         ],
       ),
     );
