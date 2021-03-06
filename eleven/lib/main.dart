@@ -5,9 +5,9 @@ final _longText = "Trust me or not but this is a very very" +
     " very very long text. Not very big. But big";
 
 final List _myList = [
-  {"name": "Tahmeed", "age": "20"},
-  {"name": "Another Tahmeed", "age": "40"},
-  {"name": "Again Another Tahmeed", "age": "30"}
+  {"name": "Tahmeed", "email": "audgk@fhd.com"},
+  {"name": "Another Tahmeed", "email": "iagdqi@fuhd.com"},
+  {"name": "Again Another Tahmeed", "email": "jhfdsk@fdj.com"}
 ];
 
 Widget _makeAGap() {
@@ -30,44 +30,19 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
-      body: Container(
-        height: 120,
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
+      body: ListView.builder(
+        itemCount: _myList.length,
+        itemBuilder: (BuildContext context, int index){
+          return Column(children: [
             ListTile(
               leading: CircleAvatar(
-                child: Text("T"),
+                child: Text(_myList[index]["name"][0]),
               ),
-              title: Text("Md. Tahmeedul Islam"),
-              subtitle: Text("tahmeed.com.bd@gmal.com"),
-              onTap: (){},
-            ),
-
-            Divider(),
-
-            ListTile(
-              leading: CircleAvatar(
-                child: Text("T"),
-              ),
-              title: Text("Md. Tahmeedul Islam"),
-              subtitle: Text("tahmeed.com.bd@gmal.com"),
-              onTap: (){},
-            ),
-
-            Divider(),
-            
-            ListTile(
-              leading: CircleAvatar(
-                child: Text("T"),
-              ),
-              title: Text("Md. Tahmeedul Islam"),
-              subtitle: Text("tahmeed.com.bd@gmal.com"),
-              onTap: (){},
-            ),
-            
-          ],
-        ),
+              title: Text(_myList[index]["name"]),
+              subtitle: Text(_myList[index]["email"]),
+            )
+          ],);
+        },
       ),
     );
   }
