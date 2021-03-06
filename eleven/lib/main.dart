@@ -52,19 +52,16 @@ class HomePage extends StatelessWidget {
               title: Text("Profile"),
               onTap: () {},
             ),
-            
             ListTile(
               leading: Icon(Icons.mail),
               title: Text("Mail"),
               onTap: () {},
             ),
-            
             ListTile(
               leading: Icon(Icons.build),
               title: Text("Setting"),
               onTap: () {},
             ),
-            
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text("Exit"),
@@ -73,21 +70,49 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView.builder(
-        itemCount: _myList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              ListTile(
-                leading: CircleAvatar(
-                  child: Text(_myList[index]["name"][0]),
-                ),
-                title: Text(_myList[index]["name"]),
-                subtitle: Text(_myList[index]["email"]),
-              )
-            ],
-          );
-        },
+      body: Column(
+        children: [
+
+          Material(
+            elevation: 10,
+            child: Card(
+              child: Column(
+                children: [
+                  Image.asset("assets/images/dp2.jpg"),
+                  Text(
+                    "Name: Tahmeedul Islam",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                  Text(
+                    "Name: Tahmeedul Islam",
+                    style: TextStyle(fontSize: 20),
+                  )
+                ],
+              ),
+            ),
+          ),
+
+          Divider(),
+
+          Card(
+              child: Column(
+                // to make gravity center of all elemnts of the column
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset("assets/images/dp2.jpg"),
+                  Text(
+                    "Name: Tahmeedul Islam",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                  Text(
+                    "Name: Tahmeedul Islam",
+                    style: TextStyle(fontSize: 20),
+                  )
+                ],
+              ),
+            ),
+        ],
       ),
     );
   }
