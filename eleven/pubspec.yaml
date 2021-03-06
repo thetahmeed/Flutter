@@ -54,6 +54,7 @@ flutter:
    - assets/images/notes.png
    - assets/images/dp2.jpg
    - assets/images/ss.jpg
+   - assets/data.json
    #- assets/images/ss.jpg
    #- assets/images/notes.png
 
