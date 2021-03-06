@@ -35,11 +35,37 @@ class HomePage extends StatelessWidget {
         child: ListView(
           scrollDirection: Axis.vertical,
           children: [
-            Text(_longText,),
+            ListTile(
+              leading: CircleAvatar(
+                child: Text("T"),
+              ),
+              title: Text("Md. Tahmeedul Islam"),
+              subtitle: Text("tahmeed.com.bd@gmal.com"),
+              onTap: (){},
+            ),
+
             Divider(),
-            Text(_longText,),
+
+            ListTile(
+              leading: CircleAvatar(
+                child: Text("T"),
+              ),
+              title: Text("Md. Tahmeedul Islam"),
+              subtitle: Text("tahmeed.com.bd@gmal.com"),
+              onTap: (){},
+            ),
+
             Divider(),
-            Text(_longText,),
+            
+            ListTile(
+              leading: CircleAvatar(
+                child: Text("T"),
+              ),
+              title: Text("Md. Tahmeedul Islam"),
+              subtitle: Text("tahmeed.com.bd@gmal.com"),
+              onTap: (){},
+            ),
+            
           ],
         ),
       ),
