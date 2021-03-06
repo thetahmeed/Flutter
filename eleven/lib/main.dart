@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         height: 120,
         child: ListView(
-          
+          scrollDirection: Axis.horizontal,
           children: [
             Text(_longText,),
             Text(_longText,),
