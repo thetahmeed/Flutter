@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 
-final _longText =
-    "Trust me or not\n\n\n but this is a very very\n\n very very long text.\n\n\n Not very big. But big";
+final _longText = "Trust me or not but this is a very very" +
+    "Trust me or not but this is a very very" +
+    " very very long text. Not very big. But big";
 
 final List _myList = [
-  {
-    "name" : "Tahmeed",
-    "age" : "20"
-  },
-  {
-    "name" : "Another Tahmeed",
-    "age" : "40"
-  },
-  {
-    "name" : "Again Another Tahmeed",
-    "age" : "30"
-  }
+  {"name": "Tahmeed", "age": "20"},
+  {"name": "Another Tahmeed", "age": "40"},
+  {"name": "Again Another Tahmeed", "age": "30"}
 ];
 
 Widget _makeAGap() {
@@ -35,22 +27,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("AppBar Title"),
-        ),
-        body: Column(
+      appBar: AppBar(
+        title: Text("AppBar Title"),
+      ),
+      body: Container(
+        height: 120,
+        child: ListView(
+          
           children: [
-            SizedBox(
-              height: 40,
-            ),
-            Text(
-              "Orange",
-              style: TextStyle(
-                  color: Colors.orange,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold),
-            ),
+            Text(_longText,),
+            Text(_longText,),
+            Text(_longText,),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
