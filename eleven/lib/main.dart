@@ -50,21 +50,25 @@ class HomePage extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.face),
               title: Text("Profile"),
+              onTap: () {},
             ),
-            Divider(),
+            
             ListTile(
               leading: Icon(Icons.mail),
               title: Text("Mail"),
+              onTap: () {},
             ),
-            Divider(),
+            
             ListTile(
               leading: Icon(Icons.build),
               title: Text("Setting"),
+              onTap: () {},
             ),
-            Divider(),
+            
             ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text("Exit"),
+              onTap: () {},
             ),
           ],
         ),
