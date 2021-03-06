@@ -29,7 +29,8 @@ class HomePage2 extends StatefulWidget {
 }
 
 class _HomePage2State extends State<HomePage2> {
-  String _changableText = "0";
+  
+  int _myCounter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -80,13 +81,13 @@ class _HomePage2State extends State<HomePage2> {
       body: Column(
         children: [
           Center(
-            child: Text(_changableText),
+            child: Text(_myCounter.toString()),
           ),
           ElevatedButton(
             child: Text("Click here"),
             onPressed: () {
               setState(() {
-                _changableText = "Tahmeedul Islam";
+                _myCounter = _myCounter+1;
               });
             },
           )
