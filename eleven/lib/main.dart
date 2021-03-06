@@ -29,10 +29,11 @@ class HomePage2 extends StatefulWidget {
 }
 
 class _HomePage2State extends State<HomePage2> {
-  
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
@@ -79,7 +80,6 @@ class _HomePage2State extends State<HomePage2> {
 
       body: Column(
         children: [
-          
           ElevatedButton(
             child: Text("Show Toast"),
             onPressed: () {
@@ -88,16 +88,18 @@ class _HomePage2State extends State<HomePage2> {
               });
             },
           ),
-          
           ElevatedButton(
             child: Text("Show Snack"),
             onPressed: () {
               setState(() {
-                
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text('A SnackBar has been shown.'),
+                  ),
+                );
               });
             },
           ),
-          
         ],
       ),
     );
