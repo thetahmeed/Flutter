@@ -30,18 +30,59 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("AppBar Title"),
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            Container(
+              height: 200,
+              decoration: BoxDecoration(color: Colors.pinkAccent),
+              child: Center(
+                child: Text(
+                  "Menu",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.face),
+              title: Text("Profile"),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.mail),
+              title: Text("Mail"),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.build),
+              title: Text("Setting"),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Exit"),
+            ),
+          ],
+        ),
+      ),
       body: ListView.builder(
         itemCount: _myList.length,
-        itemBuilder: (BuildContext context, int index){
-          return Column(children: [
-            ListTile(
-              leading: CircleAvatar(
-                child: Text(_myList[index]["name"][0]),
-              ),
-              title: Text(_myList[index]["name"]),
-              subtitle: Text(_myList[index]["email"]),
-            )
-          ],);
+        itemBuilder: (BuildContext context, int index) {
+          return Column(
+            children: [
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text(_myList[index]["name"][0]),
+                ),
+                title: Text(_myList[index]["name"]),
+                subtitle: Text(_myList[index]["email"]),
+              )
+            ],
+          );
         },
       ),
     );
