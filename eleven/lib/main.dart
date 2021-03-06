@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
-
-final _longText = "Trust me or not but this is a very very" +
-    "Trust me or not but this is a very very" +
-    " very very long text. Not very big. But big";
-
-final List _myList = [
-  {"name": "Tahmeed", "email": "audgk@fhd.com"},
-  {"name": "Another Tahmeed", "email": "iagdqi@fuhd.com"},
-  {"name": "Again Another Tahmeed", "email": "jhfdsk@fdj.com"}
-];
+import 'package:fluttertoast/fluttertoast.dart';
 
 Widget _makeAGap() {
   return SizedBox(
@@ -29,7 +20,25 @@ class HomePage2 extends StatefulWidget {
 }
 
 class _HomePage2State extends State<HomePage2> {
- 
+
+  _showToast(){
+    Fluttertoast.showToast(
+        msg: "This is Center Short Toast",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+    /*
+    Custom Toast will not work on android 11 and above, 
+    it will only use msg and toastLength remaining 
+    all properties are ignored
+    */
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +93,7 @@ class _HomePage2State extends State<HomePage2> {
             child: Text("Show Toast"),
             onPressed: () {
               setState(() {
-                
+                _showToast();
               });
             },
           ),
