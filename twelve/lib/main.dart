@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:twelve/pages/page1.dart';
 
+import 'dart:async';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
+
 void main() {
   runApp(
     MaterialApp(home: Dashboard()),
@@ -13,13 +17,21 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  List _myList = [
-    {"name": "Lennart Johansson", "city": "Stockholm"},
-    {"name": "Karl Eriksson", "city": "London"},
-    {"name": "Pekka Hartikainen", "city": "Helsinki"},
-    {"name": "Mia Svensson", "city": "Berlin"},
-    {"name": "Tahmeedul Islam", "city": "Dhaka"}
-  ];
+  List _myList;
+  Future<bool> _getPosts() async {
+    // https://jsonplaceholder.typicode.com/posts (The main URL)
+
+    var response = await http.get(Uri.https('jsonplaceholder.typicode.com', '/posts'));
+
+    setState(() {
+      _myList = convert.jsonDecode(response.body);
+    });
+  }
+
+  @override
+  void initState() {
+    this._getPosts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +40,15 @@ class _DashboardState extends State<Dashboard> {
         title: Text("Dashboard"),
       ),
       body: ListView.builder(
-        itemCount: _myList.length,
+        itemCount: _myList == null ? 0 : _myList.length,
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
-            title: Text(_myList[index]["name"]),
-            subtitle: Text(_myList[index]["city"]),
-            onTap: (){
-              Route route = MaterialPageRoute(builder: (context) => PageOne(_myList[index]));
+            leading: CircleAvatar(child: Icon(Icons.book),),
+            title: Text(_myList[index]["title"]),
+            subtitle: Text(_myList[index]["body"]),
+            onTap: () {
+              Route route = MaterialPageRoute(
+                  builder: (context) => PageOne(_myList[index]));
               Navigator.push(context, route);
             },
           );

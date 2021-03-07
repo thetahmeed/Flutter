@@ -42,8 +42,8 @@ class _PageOneState extends State<PageOne> {
                 Navigator.pop(context);
               },
             ),
-            Text("Name: "+m["name"]),
-            Text("City: "+m["city"]),
+            Text("Title : "+m["title"]),
+            Text("Body : "+m["body"]),
           ],
         ),
       ),
