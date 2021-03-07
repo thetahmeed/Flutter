@@ -8,11 +8,20 @@ import 'package:flutter/material.dart';
 import 'package:twelve/main.dart';
 
 class PageOne extends StatefulWidget {
+
+  var Message;
+
+  PageOne(this.Message);
+
   @override
-  _PageOneState createState() => _PageOneState();
+  _PageOneState createState() => _PageOneState(this.Message);
 }
 
 class _PageOneState extends State<PageOne> {
+
+  var m;
+  _PageOneState(this.m);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +42,7 @@ class _PageOneState extends State<PageOne> {
                 Navigator.pop(context);
               },
             ),
+            Text("Mesage: "+m),
           ],
         ),
       ),

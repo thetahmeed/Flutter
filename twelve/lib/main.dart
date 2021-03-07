@@ -30,7 +30,8 @@ class _DashboardState extends State<Dashboard> {
               child: Text("Go"),
               onPressed: () {
                 // Going to another activity
-                Route route = MaterialPageRoute(builder: (context) => PageOne());
+                String _sendThisMessage = "I am a Message!";
+                Route route = MaterialPageRoute(builder: (context) => PageOne(_sendThisMessage));
                 Navigator.push(context, route);
               },
             ),
