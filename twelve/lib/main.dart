@@ -13,30 +13,32 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  List _myList = [
+    {"name": "Lennart Johansson", "city": "Stockholm"},
+    {"name": "Karl Eriksson", "city": "London"},
+    {"name": "Pekka Hartikainen", "city": "Helsinki"},
+    {"name": "Mia Svensson", "city": "Berlin"},
+    {"name": "Tahmeedul Islam", "city": "Dhaka"}
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Dashboard"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 120,
-            ),
-            Text("Click here to go to next activity"),
-            ElevatedButton(
-              child: Text("Go"),
-              onPressed: () {
-                // Going to another activity
-                String _sendThisMessage = "I am a Message!";
-                Route route = MaterialPageRoute(builder: (context) => PageOne(_sendThisMessage));
-                Navigator.push(context, route);
-              },
-            ),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: _myList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            title: Text(_myList[index]["name"]),
+            subtitle: Text(_myList[index]["city"]),
+            onTap: (){
+              Route route = MaterialPageRoute(builder: (context) => PageOne(_myList[index]));
+              Navigator.push(context, route);
+            },
+          );
+        },
       ),
     );
   }
