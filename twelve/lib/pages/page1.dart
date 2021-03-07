@@ -29,7 +29,8 @@ class _PageOneState extends State<PageOne> {
             ElevatedButton(
               child: Text("Back"),
               onPressed: () {
-                
+                // Going back to previous activity
+                Navigator.pop(context);
               },
             ),
           ],
