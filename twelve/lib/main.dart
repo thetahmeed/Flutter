@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 void main() {
   runApp(
-    MaterialApp(home: Dashboard()),
+    MaterialApp(debugShowCheckedModeBanner: false, home: Dashboard()),
   );
 }
 
