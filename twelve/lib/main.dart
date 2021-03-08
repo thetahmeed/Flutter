@@ -24,8 +24,7 @@ class _DashboardState extends State<Dashboard> {
     // https://jsonplaceholder.typicode.com/posts (The main URL)
     // https://api.mocki.io/v1/192ea43d
 
-    var response =
-        await http.get(Uri.https('api.mocki.io', '/v1/192ea43d'));
+    var response = await http.get(Uri.https('api.mocki.io', '/v1/192ea43d'));
 
     setState(() {
       _myList = convert.jsonDecode(response.body);
@@ -44,8 +43,11 @@ class _DashboardState extends State<Dashboard> {
     if (dataExistOrNot) {
       var _filtered = [];
 
-      for(var i = 0; i< this._unFiltered.length; i++){
-        if(_unFiltered[i]['title'].toString().toLowerCase().contains(key.toLowerCase())){
+      for (var i = 0; i < this._unFiltered.length; i++) {
+        if (_unFiltered[i]['title']
+            .toString()
+            .toLowerCase()
+            .contains(key.toLowerCase())) {
           _filtered.add(_unFiltered[i]);
         }
       }
@@ -53,7 +55,6 @@ class _DashboardState extends State<Dashboard> {
       setState(() {
         this._myList = _filtered;
       });
-
     } else {
       setState(() {
         this._myList = this._unFiltered;
