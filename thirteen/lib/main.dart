@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,8 +15,36 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int counter = 0;
 
+  getPreviousValue() async {
+    final prefs = await SharedPreferences.getInstance();
+    final c = prefs.getInt('counter') ?? 0;
+
+    setState(() {
+      this.counter = c;
+    });
+  }
+
+  _incre() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      this.counter++;
+      prefs.setInt('counter', this.counter);
+    });
+  }
+
+  _decre() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      this.counter--;
+      prefs.setInt('counter', this.counter);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    this.getPreviousValue();
+
     return Scaffold(
       appBar: AppBar(
         title: Text("HomePage"),
@@ -28,14 +57,14 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    counter--;
+                    this._decre();
                   });
                 },
                 child: Text("-"),
               ),
               Expanded(
                 child: Text(
-                  counter.toString(),
+                  "$counter",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontSize: 150,
@@ -46,7 +75,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    counter++;
+                    this._incre();
                   });
                 },
                 child: Text("+"),
