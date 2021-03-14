@@ -14,10 +14,7 @@ class _MenuPageState extends State<MenuPage> {
         centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text("Show me the menu"),
-        ),
+        child: Text("Show me the menu"),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.blueAccent,
@@ -29,7 +26,7 @@ class _MenuPageState extends State<MenuPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => setState(() {}),
         tooltip: 'Hint Text',
-        child: Text("T"),
+        child: Icon(Icons.menu),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
