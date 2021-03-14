@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -6,6 +9,21 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  List users = [];
+
+  _loadData() async {
+    var jsonString = await rootBundle.loadString("assets/data.json");
+    setState(() {
+      this.users = json.decode(jsonString);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
