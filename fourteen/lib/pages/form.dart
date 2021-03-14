@@ -8,6 +8,28 @@ class FormPage extends StatefulWidget {
 class _FormPageState extends State<FormPage> {
   var formKey = GlobalKey<FormState>();
 
+  var nameEditTextController = TextEditingController();
+  var phoneEditTextController = TextEditingController();
+  var emailEditTextController = TextEditingController();
+
+  var name, phone, email;
+
+  void handleReset() {
+    nameEditTextController.clear();
+    phoneEditTextController.clear();
+    emailEditTextController.clear();
+  }
+
+  void handleSubmit() {
+    if (formKey.currentState.validate()) {
+      formKey.currentState.save();
+      // TODO: Save the data where ever you want
+      // Or:
+      // We can use pre dec. variables name, phone and email
+      print("Name: ${this.name}\nPhone: ${this.phone}\nEmail: ${this.email}\n");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +46,7 @@ class _FormPageState extends State<FormPage> {
               child: Column(
                 children: [
                   TextFormField(
+                    controller: nameEditTextController,
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(labelText: "Enter your name"),
                     validator: (value) {
@@ -32,21 +55,28 @@ class _FormPageState extends State<FormPage> {
                       }
                       return null;
                     },
-                    onSaved: (value) {},
+                    onSaved: (value) {
+                      this.name = value;
+                    },
                   ),
                   TextFormField(
+                    controller: phoneEditTextController,
                     maxLength: 11,
                     keyboardType: TextInputType.phone,
-                    decoration: InputDecoration(labelText: "Enter your Phone"),
+                    decoration:
+                        InputDecoration(labelText: "Enter your Phone Number"),
                     validator: (value) {
-                      if (value.length == 0) {
-                        return "Phone is required";
+                      if (value.length < 11) {
+                        return "Phone Number is invalid";
                       }
                       return null;
                     },
-                    onSaved: (value) {},
+                    onSaved: (value) {
+                      this.phone = value;
+                    },
                   ),
                   TextFormField(
+                    controller: emailEditTextController,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(labelText: "Enter your Email"),
                     validator: (value) {
@@ -55,8 +85,30 @@ class _FormPageState extends State<FormPage> {
                       }
                       return null;
                     },
-                    onSaved: (value) {},
+                    onSaved: (value) {
+                      this.email = value;
+                    },
                   ),
+                  Row(
+                    // Vertical alignment
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    // Horizontal alignment
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          handleReset();
+                        },
+                        child: Text("Clear"),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          handleSubmit();
+                        },
+                        child: Text("SUBMIT"),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
