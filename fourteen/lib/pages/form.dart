@@ -24,6 +24,7 @@ class _FormPageState extends State<FormPage> {
               child: Column(
                 children: [
                   TextFormField(
+                    keyboardType: TextInputType.name,
                     decoration: InputDecoration(labelText: "Enter your name"),
                     validator: (value) {
                       if (value.length == 0) {
@@ -34,6 +35,8 @@ class _FormPageState extends State<FormPage> {
                     onSaved: (value) {},
                   ),
                   TextFormField(
+                    maxLength: 11,
+                    keyboardType: TextInputType.phone,
                     decoration: InputDecoration(labelText: "Enter your Phone"),
                     validator: (value) {
                       if (value.length == 0) {
@@ -44,6 +47,7 @@ class _FormPageState extends State<FormPage> {
                     onSaved: (value) {},
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(labelText: "Enter your Email"),
                     validator: (value) {
                       if (value.length == 0) {
