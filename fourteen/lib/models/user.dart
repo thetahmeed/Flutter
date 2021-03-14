@@ -16,3 +16,5 @@ class User {
     profileImage = json["profile_image"];
   }
 }
+
+// this page is auto created by http://flutter-util.glitch.me/
