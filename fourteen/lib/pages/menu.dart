@@ -31,18 +31,29 @@ class _MenuPageState extends State<MenuPage> {
       appBar: AppBar(
         title: Text("Menu Page"),
         centerTitle: true,
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) {
+              return [];
+            },
+          )
+        ],
       ),
       body: Container(
         // it will take rest of all space
+
         width: double.infinity,
         child: ListView.builder(
           itemCount: users == null ? 0 : users.length,
           itemBuilder: (BuildContext context, index) {
             // Displaying data by using a Model
+
             User singleUser = User.fromJson(users[index]);
 
             return ListTile(
-              leading: Icon(Icons.person),
+              leading: CircleAvatar(
+                child: Text(singleUser.employeeName[0]),
+              ),
               title: Text(singleUser.employeeName),
               subtitle: Text("Age: " + singleUser.employeeAge.toString()),
               onTap: () {},
