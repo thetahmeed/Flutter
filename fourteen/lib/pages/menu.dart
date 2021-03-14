@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:fourteen/models/user.dart';
 
@@ -33,8 +34,22 @@ class _MenuPageState extends State<MenuPage> {
         centerTitle: true,
         actions: [
           PopupMenuButton(
+            onSelected: (value) {
+              print(value);
+            },
+            offset: Offset(0, 55),
+            elevation: 10,
             itemBuilder: (BuildContext context) {
-              return [];
+              return [
+                PopupMenuItem(
+                  child: Text("Share"),
+                  value: "share",
+                ),
+                PopupMenuItem(
+                  child: Text("About"),
+                  value: "about",
+                ),
+              ];
             },
           )
         ],
