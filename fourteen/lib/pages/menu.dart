@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fourteen/models/user.dart';
 
 class MenuPage extends StatefulWidget {
   @override
@@ -37,10 +38,13 @@ class _MenuPageState extends State<MenuPage> {
         child: ListView.builder(
           itemCount: users == null ? 0 : users.length,
           itemBuilder: (BuildContext context, index) {
+            // Displaying data by using a Model
+            User singleUser = User.fromJson(users[index]);
+
             return ListTile(
               leading: Icon(Icons.person),
-              title: Text(users[index]["employee_name"]),
-              subtitle: Text("Age: " + users[index]["employee_age"].toString()),
+              title: Text(singleUser.employeeName),
+              subtitle: Text("Age: " + singleUser.employeeAge.toString()),
               onTap: () {},
             );
           },
