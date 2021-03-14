@@ -31,22 +31,7 @@ class _MenuPageState extends State<MenuPage> {
         title: Text("Menu Page"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text("Show me the menu"),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.blueAccent,
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          height: 50.0,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => setState(() {}),
-        tooltip: 'Hint Text',
-        child: Icon(Icons.menu),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      body: Text("djdf"),
     );
   }
 }
