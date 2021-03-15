@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fourteen/pages/alertdialogue.dart';
 import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/menu.dart';
@@ -8,8 +9,10 @@ void main() {
     MaterialApp(
       title: "MatApp",
       //home: HomePage(),
-      home: FormPage(),
+      //home: FormPage(),
       //home: MenuPage(),
+      home: AlertDialoguePage(),
+
       debugShowCheckedModeBanner: false,
     ),
   );
