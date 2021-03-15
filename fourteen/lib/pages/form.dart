@@ -12,7 +12,7 @@ class _FormPageState extends State<FormPage> {
   var phoneEditTextController = TextEditingController();
   var emailEditTextController = TextEditingController();
 
-  var name, phone, email;
+  var name, gender, phone, email;
 
   void handleReset() {
     nameEditTextController.clear();
@@ -44,6 +44,7 @@ class _FormPageState extends State<FormPage> {
             child: Form(
               key: formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextFormField(
                     controller: nameEditTextController,
@@ -58,6 +59,29 @@ class _FormPageState extends State<FormPage> {
                     onSaved: (value) {
                       this.name = value;
                     },
+                  ),
+                  DropdownButton(
+                    hint: Text("Select your gender"),
+                    onChanged: (v) {
+                      setState(() {
+                        this.gender = v;
+                      });
+                    },
+                    value: this.gender,
+                    items: [
+                      DropdownMenuItem(
+                        child: Text('Male'),
+                        value: 'male',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Female'),
+                        value: 'female',
+                      ),
+                      DropdownMenuItem(
+                        child: Text('Custom'),
+                        value: 'custom',
+                      ),
+                    ],
                   ),
                   TextFormField(
                     controller: phoneEditTextController,

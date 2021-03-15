@@ -8,8 +8,8 @@ void main() {
     MaterialApp(
       title: "MatApp",
       //home: HomePage(),
-      //home: FormPage(),
-      home: MenuPage(),
+      home: FormPage(),
+      //home: MenuPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
