@@ -18,37 +18,44 @@ class _AlertDialoguePageState extends State<AlertDialoguePage> {
         child: ElevatedButton(
           child: Text('Click to confirm'),
           onPressed: () {
-            showDialog(
-                barrierLabel: 'HIdfjfodwj',
-                barrierColor: Colors.black,
-                barrierDismissible: false,
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    //shape: CircleBorder(),
-                    //backgroundColor: Colors.blue,
-                    elevation: 10,
-                    title: Text("Think again"),
-                    content: Text("Are you want to exit?"),
-                    actions: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "No",
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Yes",
-                        ),
-                      ),
-                    ],
-                  );
-                });
+            _showDialogue(context);
           },
         ),
       ),
     );
+  }
+
+  _showDialogue(context) {
+    return showDialog(
+        //barrierColor: Colors.black,
+        //barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            //shape: CircleBorder(),
+            //backgroundColor: Colors.blue,
+            elevation: 10,
+            title: Text("Think again"),
+            content: Text("Are you want to exit?"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "No",
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text(
+                  "Yes",
+                ),
+              ),
+            ],
+          );
+        });
   }
 }
