@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FormPage extends StatefulWidget {
   @override
@@ -6,13 +9,31 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  List users = [];
+
+  _loadData() async {
+    // When request is from Android
+    var jsonString = await rootBundle.loadString("assets/data.json");
+    // When request is from Web
+
+    setState(() {
+      this.users = json.decode(jsonString);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this._loadData();
+  }
+
   var formKey = GlobalKey<FormState>();
 
   var nameEditTextController = TextEditingController();
   var phoneEditTextController = TextEditingController();
   var emailEditTextController = TextEditingController();
 
-  var name, gender, phone, email;
+  var name, gender, phone, phone2, email;
 
   void handleReset() {
     nameEditTextController.clear();
@@ -21,6 +42,7 @@ class _FormPageState extends State<FormPage> {
 
     setState(() {
       gender = null;
+      phone2 = null;
     });
   }
 
@@ -95,21 +117,29 @@ class _FormPageState extends State<FormPage> {
                       ),
                     ],
                   ),
-                  TextFormField(
-                    controller: phoneEditTextController,
-                    maxLength: 11,
-                    keyboardType: TextInputType.phone,
-                    decoration:
-                        InputDecoration(labelText: "Enter your Phone Number"),
-                    validator: (value) {
-                      if (value.length < 11) {
-                        return "Phone Number is invalid";
+                  DropdownButtonFormField(
+                    validator: (v) {
+                      if (v == null) {
+                        return "Number is required";
+                      } else {
+                        return null;
                       }
-                      return null;
                     },
-                    onSaved: (value) {
-                      this.phone = value;
+                    hint: Text("Select your number"),
+                    onChanged: (v) {
+                      setState(() {
+                        this.phone2 = v;
+                      });
                     },
+                    value: this.phone2,
+                    items: users.map((user) {
+                      return DropdownMenuItem<String>(
+                        value: user['employee_salary'].toString(),
+                        child: Text(
+                          user['employee_salary'].toString(),
+                        ),
+                      );
+                    }).toList(),
                   ),
                   TextFormField(
                     controller: emailEditTextController,
