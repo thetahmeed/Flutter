@@ -18,6 +18,10 @@ class _FormPageState extends State<FormPage> {
     nameEditTextController.clear();
     phoneEditTextController.clear();
     emailEditTextController.clear();
+
+    setState(() {
+      gender = null;
+    });
   }
 
   void handleSubmit() {
@@ -26,7 +30,8 @@ class _FormPageState extends State<FormPage> {
       // TODO: Save the data where ever you want
       // Or:
       // We can use pre dec. variables name, phone and email
-      print("Name: ${this.name}\nPhone: ${this.phone}\nEmail: ${this.email}\n");
+      print(
+          "Name: ${this.name}\nGender: ${this.gender}\nPhone: ${this.phone}\nEmail: ${this.email}\n");
     }
   }
 
@@ -60,7 +65,14 @@ class _FormPageState extends State<FormPage> {
                       this.name = value;
                     },
                   ),
-                  DropdownButton(
+                  DropdownButtonFormField(
+                    validator: (v) {
+                      if (v == null) {
+                        return "Gender is required";
+                      } else {
+                        return null;
+                      }
+                    },
                     hint: Text("Select your gender"),
                     onChanged: (v) {
                       setState(() {
