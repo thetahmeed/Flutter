@@ -5,6 +5,7 @@ import 'package:fourteen/pages/backbutton.dart';
 import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/menu.dart';
+import 'package:fourteen/pages/stack.dart';
 
 void main() {
   runApp(
@@ -15,7 +16,8 @@ void main() {
       //home: MenuPage(),
       //home: AlertDialoguePage(),
       //home: BackButtonPopUp(),
-      home: AppBarTest(),
+      //home: AppBarTest(),
+      home: StackPage(),
 
       debugShowCheckedModeBanner: false,
     ),
