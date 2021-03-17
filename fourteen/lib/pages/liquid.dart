@@ -11,18 +11,28 @@ class _LiquidEffectState extends State<LiquidEffect> {
     Container(
       color: Colors.red,
       child: Center(
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
+              shadowColor: Colors.green,
+              elevation: 10,
+              child: Container(
+                height: 100,
+                width: 100,
+              ),
             ),
-          ),
-          shadowColor: Colors.green,
-          elevation: 10,
-          child: Container(
-            height: 100,
-            width: 100,
-          ),
+            Text(
+              "Card View",
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
         ),
       ),
     ),
