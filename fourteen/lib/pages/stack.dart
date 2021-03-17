@@ -28,7 +28,12 @@ class _StackPageState extends State<StackPage> {
                 radius: 50,
                 backgroundColor: Colors.red,
               ),
-            )
+            ),
+            Image.asset(
+              "images/place_holder.png",
+              height: 100,
+              width: 100,
+            ),
           ],
         ),
       ),
