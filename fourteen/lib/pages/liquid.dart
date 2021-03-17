@@ -38,6 +38,35 @@ class _LiquidEffectState extends State<LiquidEffect> {
     ),
     Container(
       color: Colors.green,
+      child: GridView.count(
+        padding: EdgeInsets.all(8.0),
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        crossAxisCount: 4,
+        children: [
+          Container(
+            color: Colors.pink,
+          ),
+          Container(
+            color: Colors.pink,
+          ),
+          Container(
+            color: Colors.pink,
+          ),
+          Container(
+            color: Colors.pink,
+          ),
+          Container(
+            color: Colors.pink,
+          ),
+          Container(
+            color: Colors.pink,
+          ),
+          Container(
+            color: Colors.pink,
+          ),
+        ],
+      ),
     ),
     Container(
       color: Colors.blue,
