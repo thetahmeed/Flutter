@@ -10,6 +10,21 @@ class _LiquidEffectState extends State<LiquidEffect> {
   final pages = [
     Container(
       color: Colors.red,
+      child: Center(
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            ),
+          ),
+          shadowColor: Colors.green,
+          elevation: 10,
+          child: Container(
+            height: 100,
+            width: 100,
+          ),
+        ),
+      ),
     ),
     Container(
       color: Colors.green,
