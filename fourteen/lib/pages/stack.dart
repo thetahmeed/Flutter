@@ -14,6 +14,7 @@ class _StackPageState extends State<StackPage> {
       ),
       body: Center(
         child: Stack(
+          clipBehavior: Clip.none,
           alignment: Alignment.center,
           children: [
             Container(
@@ -21,9 +22,12 @@ class _StackPageState extends State<StackPage> {
               width: 250,
               color: Colors.green,
             ),
-            CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.red,
+            Positioned(
+              top: -50,
+              child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.red,
+              ),
             )
           ],
         ),
