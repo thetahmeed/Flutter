@@ -4,6 +4,7 @@ import 'package:fourteen/pages/appbar.dart';
 import 'package:fourteen/pages/backbutton.dart';
 import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/home.dart';
+import 'package:fourteen/pages/liquid.dart';
 import 'package:fourteen/pages/menu.dart';
 import 'package:fourteen/pages/stack.dart';
 
@@ -17,7 +18,8 @@ void main() {
       //home: AlertDialoguePage(),
       //home: BackButtonPopUp(),
       //home: AppBarTest(),
-      home: StackPage(),
+      //home: StackPage(),
+      home: LiquidEffect(),
 
       debugShowCheckedModeBanner: false,
     ),
