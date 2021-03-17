@@ -8,14 +8,17 @@ class AppBarTest extends StatefulWidget {
 class _AppBarTestState extends State<AppBarTest> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("AppBar"),
-        centerTitle: true,
-        actions: [
-          IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
-        ],
-        leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.pink,
+        appBar: AppBar(
+          title: Text("AppBar"),
+          centerTitle: true,
+          actions: [
+            IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
+          ],
+          leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+        ),
       ),
     );
   }
