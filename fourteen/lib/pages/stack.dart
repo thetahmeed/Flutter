@@ -34,6 +34,11 @@ class _StackPageState extends State<StackPage> {
               height: 100,
               width: 100,
             ),
+            Image.network(
+              "https://blindspotetc.com/wp-content/uploads/2019/03/dummy-man-570x570.png",
+              height: 50,
+              width: 50,
+            ),
           ],
         ),
       ),
