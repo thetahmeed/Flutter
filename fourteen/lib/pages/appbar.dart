@@ -10,7 +10,7 @@ class _AppBarTestState extends State<AppBarTest> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.green,
         appBar: AppBar(
           title: Text("AppBar"),
           centerTitle: true,
@@ -18,6 +18,13 @@ class _AppBarTestState extends State<AppBarTest> {
             IconButton(icon: Icon(Icons.notifications), onPressed: () {}),
           ],
           leading: IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+        ),
+        body: Center(
+          child: Container(
+            width: MediaQuery.of(context).size.width - 100,
+            height: MediaQuery.of(context).size.height / 20,
+            color: Colors.pink,
+          ),
         ),
       ),
     );
