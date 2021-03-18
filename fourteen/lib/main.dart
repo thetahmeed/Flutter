@@ -4,6 +4,7 @@ import 'package:fourteen/pages/appbar.dart';
 import 'package:fourteen/pages/backbutton.dart';
 import 'package:fourteen/pages/expanded.dart';
 import 'package:fourteen/pages/form.dart';
+import 'package:fourteen/pages/heroprac.dart';
 import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/liquid.dart';
 import 'package:fourteen/pages/menu.dart';
@@ -25,7 +26,8 @@ void main() {
       //home: LiquidEffect(),
       //home: NuemorphicPage(),
       //home: ExpandedPage(),
-      home: PageViewPagePrac(),
+      //home: PageViewPagePrac(),
+      home: HeroPractice(),
 
       debugShowCheckedModeBanner: false,
     ),
