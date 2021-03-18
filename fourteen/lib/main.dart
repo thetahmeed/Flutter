@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fourteen/pages/alertdialogue.dart';
 import 'package:fourteen/pages/appbar.dart';
 import 'package:fourteen/pages/backbutton.dart';
+import 'package:fourteen/pages/expanded.dart';
 import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/liquid.dart';
@@ -21,7 +22,8 @@ void main() {
       //home: AppBarTest(),
       //home: StackPage(),
       //home: LiquidEffect(),
-      home: NuemorphicPage(),
+      //home: NuemorphicPage(),
+      home: ExpandedPage(),
 
       debugShowCheckedModeBanner: false,
     ),
