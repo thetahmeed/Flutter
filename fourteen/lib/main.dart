@@ -6,6 +6,7 @@ import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/liquid.dart';
 import 'package:fourteen/pages/menu.dart';
+import 'package:fourteen/pages/neumorphic.dart';
 import 'package:fourteen/pages/stack.dart';
 
 void main() {
@@ -19,7 +20,8 @@ void main() {
       //home: BackButtonPopUp(),
       //home: AppBarTest(),
       //home: StackPage(),
-      home: LiquidEffect(),
+      //home: LiquidEffect(),
+      home: NuemorphicPage(),
 
       debugShowCheckedModeBanner: false,
     ),
