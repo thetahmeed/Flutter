@@ -8,6 +8,7 @@ import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/liquid.dart';
 import 'package:fourteen/pages/menu.dart';
 import 'package:fourteen/pages/neumorphic.dart';
+import 'package:fourteen/pages/pageveiw.dart';
 import 'package:fourteen/pages/stack.dart';
 
 void main() {
@@ -23,7 +24,8 @@ void main() {
       //home: StackPage(),
       //home: LiquidEffect(),
       //home: NuemorphicPage(),
-      home: ExpandedPage(),
+      //home: ExpandedPage(),
+      home: PageViewPagePrac(),
 
       debugShowCheckedModeBanner: false,
     ),
