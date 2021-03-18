@@ -20,6 +20,10 @@ class _BottomNavigationPracticeState extends State<BottomNavigationPractice> {
         centerTitle: true,
       ),
       body: _currentPage[_currentIndex],
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 10,
         currentIndex: _currentIndex,
