@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fourteen/pages/alertdialogue.dart';
 import 'package:fourteen/pages/appbar.dart';
 import 'package:fourteen/pages/backbutton.dart';
+import 'package:fourteen/pages/bottomnavigation.dart';
 import 'package:fourteen/pages/expanded.dart';
 import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/heroprac.dart';
@@ -27,7 +28,8 @@ void main() {
       //home: NuemorphicPage(),
       //home: ExpandedPage(),
       //home: PageViewPagePrac(),
-      home: HeroPractice(),
+      //home: HeroPractice(),
+      home: BottomNavigationPractice(),
 
       debugShowCheckedModeBanner: false,
     ),
