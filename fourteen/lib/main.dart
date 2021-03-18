@@ -11,6 +11,7 @@ import 'package:fourteen/pages/liquid.dart';
 import 'package:fourteen/pages/menu.dart';
 import 'package:fourteen/pages/neumorphic.dart';
 import 'package:fourteen/pages/pageveiw.dart';
+import 'package:fourteen/pages/sliverappbar.dart';
 import 'package:fourteen/pages/stack.dart';
 
 void main() {
@@ -29,7 +30,8 @@ void main() {
       //home: ExpandedPage(),
       //home: PageViewPagePrac(),
       //home: HeroPractice(),
-      home: BottomNavigationPractice(),
+      //home: BottomNavigationPractice(),
+      home: SliverAppBarPrac(),
 
       debugShowCheckedModeBanner: false,
     ),
