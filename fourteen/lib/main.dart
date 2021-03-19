@@ -5,6 +5,7 @@ import 'package:fourteen/pages/backbutton.dart';
 import 'package:fourteen/pages/bottomnavigation.dart';
 import 'package:fourteen/pages/expanded.dart';
 import 'package:fourteen/pages/form.dart';
+import 'package:fourteen/pages/gradient.dart';
 import 'package:fourteen/pages/heroprac.dart';
 import 'package:fourteen/pages/home.dart';
 import 'package:fourteen/pages/liquid.dart';
@@ -31,7 +32,8 @@ void main() {
       //home: PageViewPagePrac(),
       //home: HeroPractice(),
       //home: BottomNavigationPractice(),
-      home: SliverAppBarPrac(),
+      //home: SliverAppBarPrac(),
+      home: GradientPage(),
 
       debugShowCheckedModeBanner: false,
     ),
