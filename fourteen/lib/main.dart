@@ -14,6 +14,7 @@ import 'package:fourteen/pages/neumorphic.dart';
 import 'package:fourteen/pages/pageveiw.dart';
 import 'package:fourteen/pages/sliverappbar.dart';
 import 'package:fourteen/pages/stack.dart';
+import 'package:fourteen/pages/statepractice.dart';
 
 void main() {
   runApp(
@@ -33,7 +34,8 @@ void main() {
       //home: HeroPractice(),
       //home: BottomNavigationPractice(),
       //home: SliverAppBarPrac(),
-      home: GradientPage(),
+      //home: GradientPage(),
+      home: StateManagementPage(),
 
       debugShowCheckedModeBanner: false,
     ),
