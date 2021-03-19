@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class StateManagementPage extends StatefulWidget {
   @override
@@ -6,25 +7,19 @@ class StateManagementPage extends StatefulWidget {
 }
 
 class _StateManagementPageState extends State<StateManagementPage> {
-  int _currentNumber = 0;
-
-  _increament() {
-    setState(() {
-      _currentNumber++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    final _dataFromDataClass = Provider.of<Data>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("State Managemnet"),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
-        elevation: 2.0,
+        elevation: 20.0,
         onPressed: () {
-          _increament();
+          _dataFromDataClass._increament();
         },
         child: Icon(Icons.add),
       ),
@@ -45,7 +40,7 @@ class _StateManagementPageState extends State<StateManagementPage> {
       ),
       body: Center(
         child: Text(
-          _currentNumber.toString(),
+          _dataFromDataClass._currentNumber.toString(),
           style: TextStyle(
             fontSize: 190,
             fontWeight: FontWeight.bold,
@@ -54,5 +49,14 @@ class _StateManagementPageState extends State<StateManagementPage> {
         ),
       ),
     );
+  }
+}
+
+class Data extends ChangeNotifier {
+  int _currentNumber = 0;
+
+  _increament() {
+    _currentNumber++;
+    notifyListeners();
   }
 }

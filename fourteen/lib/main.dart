@@ -15,29 +15,39 @@ import 'package:fourteen/pages/pageveiw.dart';
 import 'package:fourteen/pages/sliverappbar.dart';
 import 'package:fourteen/pages/stack.dart';
 import 'package:fourteen/pages/statepractice.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      title: "MatApp",
-      //home: HomePage(),
-      //home: FormPage(),
-      //home: MenuPage(),
-      //home: AlertDialoguePage(),
-      //home: BackButtonPopUp(),
-      //home: AppBarTest(),
-      //home: StackPage(),
-      //home: LiquidEffect(),
-      //home: NuemorphicPage(),
-      //home: ExpandedPage(),
-      //home: PageViewPagePrac(),
-      //home: HeroPractice(),
-      //home: BottomNavigationPractice(),
-      //home: SliverAppBarPrac(),
-      //home: GradientPage(),
-      home: StateManagementPage(),
-
-      debugShowCheckedModeBanner: false,
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Data()),
+      ],
+      child: MaterialApp(
+        home: StateManagementPage(),
+      ),
     ),
+
+    /*MaterialApp(
+        title: "MatApp",
+        //home: HomePage(),
+        //home: FormPage(),
+        //home: MenuPage(),
+        //home: AlertDialoguePage(),
+        //home: BackButtonPopUp(),
+        //home: AppBarTest(),
+        //home: StackPage(),
+        //home: LiquidEffect(),
+        //home: NuemorphicPage(),
+        //home: ExpandedPage(),
+        //home: PageViewPagePrac(),
+        //home: HeroPractice(),
+        //home: BottomNavigationPractice(),
+        //home: SliverAppBarPrac(),
+        //home: GradientPage(),
+        home: StateManagementPage(),
+
+        debugShowCheckedModeBanner: false,
+      ),*/
   );
 }
