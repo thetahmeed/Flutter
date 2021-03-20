@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fourteen/pages/receivedata.dart';
 import 'package:provider/provider.dart';
 
 class StateManagementPage extends StatefulWidget {
@@ -15,6 +16,15 @@ class _StateManagementPageState extends State<StateManagementPage> {
       appBar: AppBar(
         title: Text("State Managemnet"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.open_in_new),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => RecevePage()));
+            },
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         elevation: 20.0,

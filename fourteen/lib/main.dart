@@ -3,6 +3,7 @@ import 'package:fourteen/pages/alertdialogue.dart';
 import 'package:fourteen/pages/appbar.dart';
 import 'package:fourteen/pages/backbutton.dart';
 import 'package:fourteen/pages/bottomnavigation.dart';
+import 'package:fourteen/pages/data.dart';
 import 'package:fourteen/pages/expanded.dart';
 import 'package:fourteen/pages/form.dart';
 import 'package:fourteen/pages/gradient.dart';
@@ -25,6 +26,7 @@ void main() {
       ],
       child: MaterialApp(
         home: StateManagementPage(),
+        debugShowCheckedModeBanner: false,
       ),
     ),
 
