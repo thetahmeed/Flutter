@@ -29,8 +29,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final _picker = ImagePicker();
 
-  Future _getImageFromGellery() async {
+  Future _getImageFromCamera() async {
     PickedFile _image = await _picker.getImage(source: ImageSource.camera);
+    setState(() {
+      if (_image != null) {
+        image = File(_image.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+  Future _getImageFromGallery() async {
+    PickedFile _image = await _picker.getImage(source: ImageSource.gallery);
     setState(() {
       if (_image != null) {
         image = File(_image.path);
@@ -70,14 +81,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   icon: Icon(Icons.camera),
                   iconSize: 60,
                   onPressed: () {
-                    _getImageFromGellery();
+                    _getImageFromCamera();
                   },
                 ),
                 IconButton(
                   color: Colors.blue,
                   icon: Icon(Icons.photo_library),
                   iconSize: 60,
-                  onPressed: () {},
+                  onPressed: () {
+                    _getImageFromGallery();
+                  },
                 ),
               ],
             )
