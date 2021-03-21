@@ -8,25 +8,21 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => Counter()),
       ],
-      child: const MyApp(),
+      child: MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,41 +33,18 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             Text('You have pushed the button this many times:'),
-
-            /// Extracted as a separate widget for performance optimization.
-            /// As a separate widget, it will rebuild independently from [MyHomePage].
-            ///
-            /// This is totally optional (and rarely needed).
-            /// Similarly, we could also use [Consumer] or [Selector].
-            Count(),
+            Text('${context.watch<Counter>().count}'),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        key: const Key('increment_floatingActionButton'),
-
-        /// Calls `context.read` instead of `context.watch` so that it does not rebuild
-        /// when [Counter] changes.
+        key: Key('increment_floatingActionButton'),
         onPressed: () => context.read<Counter>().increment(),
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
-  }
-}
-
-class Count extends StatelessWidget {
-  const Count({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-
-        /// Calls `context.watch` to make [Count] rebuild when [Counter] changes.
-        '${context.watch<Counter>().count}',
-        key: const Key('counterState'),
-        style: Theme.of(context).textTheme.headline4);
   }
 }
