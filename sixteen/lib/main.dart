@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sixteen/data.dart';
+import 'package:sixteen/second.dart';
 
 void main() {
   runApp(
@@ -28,6 +29,14 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Example'),
+        actions: [
+          IconButton(
+              icon: Icon(Icons.open_in_new),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => SecondPage()));
+              }),
+        ],
       ),
       body: Center(
         child: Column(
