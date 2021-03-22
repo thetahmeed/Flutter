@@ -19,9 +19,18 @@ class _SliderPracticeState extends State<SliderPractice> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "This is a Text",
-              style: TextStyle(fontSize: _currentValue),
+            RichText(
+              text: TextSpan(
+                children: <TextSpan>[
+                  TextSpan(
+                      text: 'I am',
+                      style: TextStyle(fontSize: 20, color: Colors.blue)),
+                  TextSpan(
+                      text: ' big',
+                      style: TextStyle(
+                          fontSize: _currentValue, color: Colors.blue)),
+                ],
+              ),
             ),
             Slider(
               min: 0,
