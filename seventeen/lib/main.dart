@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seventeen/pages/bottomsheet.dart';
 import 'package:seventeen/pages/home.dart';
 
 void main() {
@@ -10,7 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: MyHomePage(), // Image Picker
+      // Image Picker
+      //home: MyHomePage(),
+      home: BottomSheetPrac(),
     );
   }
 }
