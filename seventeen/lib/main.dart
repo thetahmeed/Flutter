@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seventeen/pages/animatedcrossfade.dart';
 import 'package:seventeen/pages/bottomsheet.dart';
 import 'package:seventeen/pages/curvednavigation.dart';
 import 'package:seventeen/pages/customdialogue.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       // SnackBar
       //home: BottomSheetPrac(),
       //home: SliderPractice(),
-      home: DismissablePrac(),
+      //home: DismissablePrac(),
+      home: AnimatedCrossfade(),
     );
   }
 }
