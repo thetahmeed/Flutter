@@ -33,13 +33,21 @@ class _AnimatedCrossfadeState extends State<AnimatedCrossfade> {
             Text("Switch"),
             SizedBox(height: 10),
             Switch(
-                value: checked,
-                onChanged: (v) {
-                  setState(() {
-                    checked = v;
-                    print(v);
-                  });
-                })
+              value: checked,
+              onChanged: (v) {
+                setState(() {
+                  checked = v;
+                  print(v);
+                });
+              },
+            ),
+            SizedBox(height: 10),
+            AnimatedContainer(
+              height: checked ? 100 : 200,
+              width: checked ? 200 : 100,
+              duration: Duration(milliseconds: 500),
+              color: checked ? Colors.pink : Colors.blue,
+            )
           ],
         ),
       ),
