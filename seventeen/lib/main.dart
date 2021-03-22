@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:seventeen/pages/bottomsheet.dart';
 import 'package:seventeen/pages/curvednavigation.dart';
 import 'package:seventeen/pages/customdialogue.dart';
+import 'package:seventeen/pages/dismissable.dart';
 import 'package:seventeen/pages/home.dart';
 import 'package:seventeen/pages/slider.dart';
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       //home: CurvedBottomNavigationPrac(),
       // SnackBar
       //home: BottomSheetPrac(),
-      home: SliderPractice(),
+      //home: SliderPractice(),
+      home: DismissablePrac(),
     );
   }
 }
