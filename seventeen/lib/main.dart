@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seventeen/pages/bottomsheet.dart';
 import 'package:seventeen/pages/curvednavigation.dart';
+import 'package:seventeen/pages/customdialogue.dart';
 import 'package:seventeen/pages/home.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       // Image Picker
       //home: MyHomePage(),
       //home: BottomSheetPrac(),
-      home: CurvedBottomNavigationPrac(),
+      //home: CurvedBottomNavigationPrac(),
+      home: CustomDialoguePrac(),
     );
   }
 }
