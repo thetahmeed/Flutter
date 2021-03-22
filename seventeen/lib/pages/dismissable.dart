@@ -6,6 +6,7 @@ class DismissablePrac extends StatefulWidget {
 }
 
 class _DismissablePracState extends State<DismissablePrac> {
+  bool _inCheckboxValue = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,6 +48,17 @@ class _DismissablePracState extends State<DismissablePrac> {
             trailing: Icon(Icons.more_vert),
             //tileColor: Colors.blueAccent.shade100,
           ),
+          SizedBox(height: 10),
+          Text(_inCheckboxValue == false ? "Unchecked" : "Checked"),
+          Checkbox(
+            value: _inCheckboxValue,
+            onChanged: (v) {
+              setState(() {
+                _inCheckboxValue = v;
+                print(_inCheckboxValue);
+              });
+            },
+          )
         ],
       )),
     );
