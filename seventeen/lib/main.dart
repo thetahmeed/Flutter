@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
       //home: MyHomePage(),
       //home: BottomSheetPrac(),
       //home: CurvedBottomNavigationPrac(),
-      home: CustomDialoguePrac(),
+      // SnackBar
+      home: BottomSheetPrac(),
     );
   }
 }

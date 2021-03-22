@@ -13,7 +13,22 @@ class _BottomSheetPracState extends State<BottomSheetPrac> {
         title: Text("Bottom Sheet"),
       ),
       body: Center(
-        child: ElevatedButton(
+          child: ElevatedButton(
+        child: Text("Show Snackbar"),
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              label: 'Undo',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+      )
+          /*ElevatedButton(
           child: Text("Show Bottom Sheet"),
           onPressed: () {
             showModalBottomSheet(
@@ -49,8 +64,8 @@ class _BottomSheetPracState extends State<BottomSheetPrac> {
                   );
                 });
           },
-        ),
-      ),
+        ),*/
+          ),
     );
   }
 
