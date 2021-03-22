@@ -2,6 +2,28 @@
 // basic things about flutter
 
 ### :: eleven: Basic things 01
+1. Text
+2. Container
+3. Raw
+4. Column
+5. Icon
+6. Image
+7. ListView
+8. Stack
+9. Positioned
+10. SizedBox
+11. Expanded
+12. Custom Widget
+13. List
+14. ListTile
+15. Drawer
+16. Card
+17. Stateful Widget
+18. Counter App
+19. Button
+20. Snack Bar
+21. Toast
+22. Read Local Json
 ### :: twelve: Multiple page app, Sending data between them and Reading json data from api
 ### :: thirteen: Shared Preferences
 ### :: fourteen: Basic things 02
