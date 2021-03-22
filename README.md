@@ -27,22 +27,32 @@
 ### :: twelve: Multiple page app, Sending data between them and Reading json data from api
 ### :: thirteen: Shared Preferences
 ### :: fourteen: Basic things 02
-1. HomePage(),
-2. FormPage(),
-3. MenuPage(),
-4. AlertDialoguePage(),
-5. BackButtonPopUp(),
-6. AppBarTest(),
-7. StackPage(),
-8. LiquidEffect(),
-9. NuemorphicPage(),
-10. ExpandedPage(),
-11. PageViewPagePrac(),
-12. HeroPractice(),
-13. BottomNavigationPractice(),
-14. SliverAppBarPrac(),
-15. GradientPage(),
-16. StateManagementPage(),
+1. Correct method of using a file from assets
+2. Displaying data by using a Model Class
+3. Option menu, PopupMenu, On Selected, PopupButton, onSelected
+4. Dropdown Button, DropdownButton Form Field, DropdownButton FormField From A List
+5. Alert Dialogue
+6. Enabled Back Button
+7. Exit Dialogue
+8. AppBar
+9. Safe Area
+10. Media Query
+11. Stack
+12. Overflow / Clip Behavior
+13. Image (Correct way to use images)
+14. Image From URL
+15. Liquid Swap
+16. CardView
+17. GridView
+18. Neumorphic Design
+19. Expended
+20. PageViewer
+21. Hero
+22. Bottom Navigation Bar
+23. TabBar
+24. Sliver AppBar
+25. Gradient
+26. State Manegament By Set State
 ### :: fifteen: State Management & Data Transfer (By Set State)
 ### :: sixteen: State Management & Data Transfer (By Provider)
 ### :: seventeen: 
