@@ -17,6 +17,7 @@ class _BottomSheetPracState extends State<BottomSheetPrac> {
         child: Text("Show Snackbar"),
         onPressed: () {
           final snackBar = SnackBar(
+            duration: Duration(microseconds: 200),
             content: Text('Yay! A SnackBar!'),
             action: SnackBarAction(
               label: 'Undo',

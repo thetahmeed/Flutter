@@ -3,6 +3,7 @@ import 'package:seventeen/pages/bottomsheet.dart';
 import 'package:seventeen/pages/curvednavigation.dart';
 import 'package:seventeen/pages/customdialogue.dart';
 import 'package:seventeen/pages/home.dart';
+import 'package:seventeen/pages/slider.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       //home: BottomSheetPrac(),
       //home: CurvedBottomNavigationPrac(),
       // SnackBar
-      home: BottomSheetPrac(),
+      //home: BottomSheetPrac(),
+      home: SliderPractice(),
     );
   }
 }
