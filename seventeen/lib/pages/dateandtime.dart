@@ -38,7 +38,6 @@ class _DateAndTimePracState extends State<DateAndTimePrac> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(_timeOfDay.toString()),
             _timeOfDay == null
                 ? Text('Select a time')
                 : Text(
