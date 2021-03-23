@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class DateAndTimePrac extends StatefulWidget {
@@ -54,7 +56,22 @@ class _DateAndTimePracState extends State<DateAndTimePrac> {
                 onPressed: () {
                   getDate();
                 },
-                child: Text('Pick date'))
+                child: Text('Pick date')),
+            SizedBox(height: 30),
+            Transform.rotate(
+              angle: pi / 4,
+              child: Container(
+                height: 100,
+                width: 100,
+                color: Colors.indigo,
+                child: Center(
+                  child: Text(
+                    'Hello',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
