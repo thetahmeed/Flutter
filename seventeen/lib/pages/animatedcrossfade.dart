@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class AnimatedCrossfade extends StatefulWidget {
@@ -79,8 +81,27 @@ class _AnimatedCrossfadeState extends State<AnimatedCrossfade> {
                       ),
                       SizedBox(
                         width: 10,
-                      )
+                      ),
                     ],
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.red,
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                    child: Container(
+                      height: 200,
+                      width: 200,
+                      color: Colors.white.withOpacity(0.3),
+                      child: Text('Blur'),
+                    ),
                   ),
                 )
               ],
