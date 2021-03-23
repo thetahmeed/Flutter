@@ -47,6 +47,34 @@ class _AnimatedCrossfadeState extends State<AnimatedCrossfade> {
               width: checked ? 200 : 100,
               duration: Duration(milliseconds: 500),
               color: checked ? Colors.pink : Colors.blue,
+            ),
+            SizedBox(height: 10),
+            ExpansionTile(
+              leading: CircleAvatar(
+                child: Text('f'),
+              ),
+              title: Text("I am a Title"),
+              subtitle: Text('This is a subttile'),
+              trailing: Icon(Icons.arrow_drop_down),
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        icon: Icon(Icons.call, color: Colors.blue),
+                        onPressed: () {}),
+                    IconButton(
+                        icon: Icon(Icons.message, color: Colors.blue),
+                        onPressed: () {}),
+                    IconButton(
+                        icon: Icon(Icons.email, color: Colors.blue),
+                        onPressed: () {}),
+                    SizedBox(
+                      width: 10,
+                    )
+                  ],
+                )
+              ],
             )
           ],
         ),
