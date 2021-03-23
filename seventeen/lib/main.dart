@@ -6,6 +6,7 @@ import 'package:seventeen/pages/customdialogue.dart';
 import 'package:seventeen/pages/dateandtime.dart';
 import 'package:seventeen/pages/dismissable.dart';
 import 'package:seventeen/pages/home.dart';
+import 'package:seventeen/pages/navigationrail.dart';
 import 'package:seventeen/pages/slider.dart';
 
 void main() {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       //home: SliderPractice(),
       //home: DismissablePrac(),
       //home: AnimatedCrossfade(),
-      home: DateAndTimePrac(),
+      //home: DateAndTimePrac(),
+      home: NavigationrailPrac(),
     );
   }
 }

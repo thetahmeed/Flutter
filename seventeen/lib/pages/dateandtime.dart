@@ -71,7 +71,29 @@ class _DateAndTimePracState extends State<DateAndTimePrac> {
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(height: 30),
+            DataTable(columns: [
+              DataColumn(label: Text('Name')),
+              DataColumn(label: Text('Phone')),
+              DataColumn(label: Text('Email')),
+            ], rows: [
+              DataRow(cells: [
+                DataCell(Text('Tahmeed')),
+                DataCell(Text('01700547406')),
+                DataCell(Text('tahmeed.com.bd@mail.com')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('Tahmeed')),
+                DataCell(Text('01700547406')),
+                DataCell(Text('tahmeed.com.bd@mail.com')),
+              ]),
+              DataRow(cells: [
+                DataCell(Text('Tahmeed')),
+                DataCell(Text('01700547406')),
+                DataCell(Text('tahmeed.com.bd@mail.com')),
+              ])
+            ]),
           ],
         ),
       ),
