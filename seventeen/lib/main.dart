@@ -3,6 +3,7 @@ import 'package:seventeen/pages/animatedcrossfade.dart';
 import 'package:seventeen/pages/bottomsheet.dart';
 import 'package:seventeen/pages/curvednavigation.dart';
 import 'package:seventeen/pages/customdialogue.dart';
+import 'package:seventeen/pages/dateandtime.dart';
 import 'package:seventeen/pages/dismissable.dart';
 import 'package:seventeen/pages/home.dart';
 import 'package:seventeen/pages/slider.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       //home: BottomSheetPrac(),
       //home: SliderPractice(),
       //home: DismissablePrac(),
-      home: AnimatedCrossfade(),
+      //home: AnimatedCrossfade(),
+      home: DateAndTimePrac(),
     );
   }
 }
