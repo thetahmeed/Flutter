@@ -7,6 +7,7 @@ import 'package:seventeen/pages/dateandtime.dart';
 import 'package:seventeen/pages/dismissable.dart';
 import 'package:seventeen/pages/home.dart';
 import 'package:seventeen/pages/navigationrail.dart';
+import 'package:seventeen/pages/riveanimation.dart';
 import 'package:seventeen/pages/slider.dart';
 
 void main() {
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       //home: DismissablePrac(),
       //home: AnimatedCrossfade(),
       //home: DateAndTimePrac(),
-      home: NavigationrailPrac(),
+      //home: NavigationrailPrac(),
+      home: RiveAnimationPrac(),
     );
   }
 }
