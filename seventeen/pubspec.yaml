@@ -52,6 +52,7 @@ flutter:
     - images/aa.png
     - images/bb.png
     - images/fani.riv
+    - images/marty_v6.riv
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
