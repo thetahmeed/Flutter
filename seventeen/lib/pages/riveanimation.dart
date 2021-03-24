@@ -14,7 +14,9 @@ class _RiveAnimationPracState extends State<RiveAnimationPrac> {
         title: Text("Rive"),
         centerTitle: true,
       ),
-      body: Text('sdggs'),
+      body: Center(
+        child: Text('sdggs'),
+      ),
     );
   }
 }
