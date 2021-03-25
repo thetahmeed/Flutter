@@ -6,6 +6,7 @@ import 'package:seventeen/pages/curvednavigation.dart';
 import 'package:seventeen/pages/customdialogue.dart';
 import 'package:seventeen/pages/dateandtime.dart';
 import 'package:seventeen/pages/dismissable.dart';
+import 'package:seventeen/pages/firebase.dart';
 import 'package:seventeen/pages/home.dart';
 import 'package:seventeen/pages/navigationrail.dart';
 import 'package:seventeen/pages/riveanimation.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
       //home: DateAndTimePrac(),
       //home: NavigationrailPrac(),
       //home: RiveAnimationPrac(),
-      home: CursorSliderPrac(),
+      //home: CursorSliderPrac(),
+      home: FirebasePrac(),
     );
   }
 }
