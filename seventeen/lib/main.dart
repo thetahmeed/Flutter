@@ -11,8 +11,10 @@ import 'package:seventeen/pages/home.dart';
 import 'package:seventeen/pages/navigationrail.dart';
 import 'package:seventeen/pages/riveanimation.dart';
 import 'package:seventeen/pages/slider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
