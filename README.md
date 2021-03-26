@@ -62,3 +62,4 @@
 4. Custom Dialogue
 5. SnackBar
 6. Slider
+7. RichText
