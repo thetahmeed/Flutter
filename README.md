@@ -57,3 +57,4 @@
 ### :: sixteen: State Management & Data Transfer (By Provider)
 ### :: seventeen: 
 1. Image picker
+2. Bottom Sheet
