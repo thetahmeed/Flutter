@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class FirebasePrac extends StatefulWidget {
@@ -24,7 +27,19 @@ class _FirebasePracState extends State<FirebasePrac> {
             return Text('Error');
           } else if (snapshot.hasData) {
             return Center(
-              child: Text('Welcome'),
+              child: Column(
+                children: [
+                  Text('Welcome'),
+                  ElevatedButton(
+                      onPressed: () {
+                        DatabaseReference _testRef = FirebaseDatabase.instance
+                            .reference()
+                            .child('test1');
+                        _testRef.set('Hello World ${Random().nextInt(100)}');
+                      },
+                      child: Text('Add data'))
+                ],
+              ),
             );
           } else {
             return Center(
