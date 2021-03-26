@@ -7,7 +7,7 @@ class FirebasePrac extends StatefulWidget {
 }
 
 class _FirebasePracState extends State<FirebasePrac> {
-  final FirebaseApp _fbApp = Firebase.initializeApp();
+  final Future<FirebaseApp> _fbApp = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,22 @@ class _FirebasePracState extends State<FirebasePrac> {
         title: Text('firebase'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text('test'),
+      body: FutureBuilder(
+        future: _fbApp,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            print('Got error! ${snapshot.error.toString()}');
+            return Text('Error');
+          } else if (snapshot.hasData) {
+            return Center(
+              child: Text('Welcome'),
+            );
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
       ),
     );
   }
