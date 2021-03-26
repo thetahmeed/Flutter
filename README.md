@@ -57,3 +57,9 @@
 ### :: sixteen: State Management & Data Transfer (By Provider)
 ### :: seventeen: 
 1. Image picker
+2. Bottom Sheet
+3. Curved Bottom Navigation
+4. Custom Dialogue
+5. SnackBar
+6. Slider
+7. RichText
