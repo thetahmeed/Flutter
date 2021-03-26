@@ -60,3 +60,4 @@
 2. Bottom Sheet
 3. Curved Bottom Navigation
 4. Custom Dialogue
+5. SnackBar
