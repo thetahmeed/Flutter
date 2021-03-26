@@ -61,3 +61,4 @@
 3. Curved Bottom Navigation
 4. Custom Dialogue
 5. SnackBar
+6. Slider
