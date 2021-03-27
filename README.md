@@ -63,3 +63,4 @@
 5. SnackBar
 6. Slider
 7. RichText
+8. Dismissable
