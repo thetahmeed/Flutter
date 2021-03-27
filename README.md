@@ -65,3 +65,4 @@
 7. RichText
 8. Dismissable
 9. Checkbox
+10. Animated Cross Fade
