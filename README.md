@@ -64,3 +64,4 @@
 6. Slider
 7. RichText
 8. Dismissable
+9. Checkbox
