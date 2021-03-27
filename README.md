@@ -66,3 +66,4 @@
 8. Dismissable
 9. Checkbox
 10. Animated Cross Fade
+11. Switch
