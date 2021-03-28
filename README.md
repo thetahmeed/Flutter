@@ -76,3 +76,6 @@
 18. Transform
 19. Data Table
 20. NavigationRail
+21. Rive Animation
+22. Cursor Slider
+23. Cursor Slider with Indicator
