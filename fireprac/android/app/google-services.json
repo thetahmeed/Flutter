@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "60746031797",
+    "project_id": "fireprac-37d91",
+    "storage_bucket": "fireprac-37d91.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60746031797:android:e685909a733ffb723554fc",
+        "android_client_info": {
+          "package_name": "com.tahmeedul.fireprac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60746031797-v04mrnmcqh40leuo9ehl8h7rmsvui4bg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoxZUJ9DyAvYRcoiuHjXAlDGmImiFqlT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60746031797-v04mrnmcqh40leuo9ehl8h7rmsvui4bg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
