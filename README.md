@@ -68,3 +68,11 @@
 10. Animated Cross Fade
 11. Switch
 12. Animated Container
+13. Expentiontile
+14. Tooltip
+15. Backdrop Filter
+16. Date
+17. Time
+18. Transform
+19. Data Table
+20. NavigationRail
