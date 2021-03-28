@@ -34,6 +34,8 @@ dependencies:
   carousel_slider: ^3.0.0
   firebase_core: ^1.0.2
   firebase_database: ^6.1.0
+  change_app_package_name: ^0.1.2
+
 
 dev_dependencies:
   flutter_test:

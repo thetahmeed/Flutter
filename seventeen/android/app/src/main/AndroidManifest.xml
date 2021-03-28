@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.seventeen">
+    package="com.tahmeedul.newpackage">
    <application
         android:label="seventeen"
         android:icon="@mipmap/ic_launcher">
