@@ -63,15 +63,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    FirebaseAuth.instance.authStateChanges().listen((User user) {
-      if (user == null) {
-        print('User is currently signed out!');
-      } else {
-        print('User is signed in!');
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
-      }
-    });
+    FirebaseAuth.instance.authStateChanges().listen(
+      (User user) {
+        if (user == null) {
+          print('User is currently signed out!');
+        } else {
+          print('User is signed in!');
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+              (route) => false);
+        }
+      },
+    );
   }
 
   @override
