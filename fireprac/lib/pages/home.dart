@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -6,6 +7,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  _logOutUser() async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +24,11 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('WELCOME'),
-            ElevatedButton(onPressed: () {}, child: Text('LOG OUT'))
+            ElevatedButton(
+                onPressed: () {
+                  _logOutUser();
+                },
+                child: Text('LOG OUT'))
           ],
         ),
       ),
