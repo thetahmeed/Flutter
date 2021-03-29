@@ -47,6 +47,19 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  _singInUser(String email, String pass) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: pass);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +111,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: Text('REGISTER')),
                   SizedBox(width: 8),
-                  ElevatedButton(onPressed: () {}, child: Text('LOG IN'))
+                  ElevatedButton(
+                      onPressed: () {
+                        _singInUser(_teEmailController.text,
+                            _tePasswordController.text);
+                      },
+                      child: Text('LOG IN'))
                 ],
               )
             ],
