@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fireprac/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -30,11 +32,26 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _teEmailController = TextEditingController();
   final TextEditingController _tePasswordController = TextEditingController();
 
+  _signUpUser(String email, String pass) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: pass);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Scaffold'),
+        title: Text('Log in'),
         centerTitle: true,
       ),
       body: Container(
@@ -76,17 +93,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   TextButton(
                       onPressed: () {
-                        print(_teEmailController.text);
-                        print(_tePasswordController.text);
+                        _signUpUser(_teEmailController.text,
+                            _tePasswordController.text);
                       },
                       child: Text('REGISTER')),
                   SizedBox(width: 8),
-                  ElevatedButton(
-                      onPressed: () {
-                        print(_teEmailController.text);
-                        print(_tePasswordController.text);
-                      },
-                      child: Text('LOG IN'))
+                  ElevatedButton(onPressed: () {}, child: Text('LOG IN'))
                 ],
               )
             ],
