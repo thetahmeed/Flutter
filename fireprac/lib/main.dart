@@ -27,6 +27,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final TextEditingController _teEmailController = TextEditingController();
+  final TextEditingController _tePasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
+                controller: _teEmailController,
                 maxLength: null,
                 keyboardType: TextInputType.emailAddress,
                 style: TextStyle(fontSize: 18, color: Colors.black),
@@ -55,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(height: 8),
               TextFormField(
+                controller: _tePasswordController,
                 obscureText: true,
                 maxLength: null,
                 keyboardType: TextInputType.visiblePassword,
@@ -69,9 +74,19 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(onPressed: () {}, child: Text('REGISTER')),
+                  TextButton(
+                      onPressed: () {
+                        print(_teEmailController.text);
+                        print(_tePasswordController.text);
+                      },
+                      child: Text('REGISTER')),
                   SizedBox(width: 8),
-                  ElevatedButton(onPressed: () {}, child: Text('LOG IN'))
+                  ElevatedButton(
+                      onPressed: () {
+                        print(_teEmailController.text);
+                        print(_tePasswordController.text);
+                      },
+                      child: Text('LOG IN'))
                 ],
               )
             ],
