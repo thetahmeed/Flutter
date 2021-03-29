@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,6 +16,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final TextEditingController _teNameControler = TextEditingController();
+
+    final CollectionReference userCollection =
+        FirebaseFirestore.instance.collection('users');
+
+    Future<void> addUser(String name) {
+      // Call the user's CollectionReference to add a new user
+      return userCollection
+          .add({
+            'name': name,
+          })
+          .then((value) => print("User Added"))
+          .catchError((error) => print("Failed to add user: $error"));
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -51,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                   IconButton(
                     icon: Icon(Icons.save, color: Colors.blue),
                     onPressed: () {
-                      print(_teNameControler.text);
+                      addUser(_teNameControler.text);
                     },
                   )
                 ],
