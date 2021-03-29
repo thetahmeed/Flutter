@@ -32,8 +32,52 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Scaffold'),
+        centerTitle: true,
       ),
-      body: Center(child: Text('Echo...')),
+      body: Container(
+        padding: EdgeInsets.all(18),
+        alignment: Alignment.center,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Form(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextFormField(
+                maxLength: null,
+                keyboardType: TextInputType.emailAddress,
+                style: TextStyle(fontSize: 18, color: Colors.black),
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(fontSize: 18, color: Colors.grey),
+                ),
+              ),
+              SizedBox(height: 8),
+              TextFormField(
+                obscureText: true,
+                maxLength: null,
+                keyboardType: TextInputType.visiblePassword,
+                style: TextStyle(fontSize: 18, color: Colors.black),
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(fontSize: 18, color: Colors.grey),
+                ),
+              ),
+              SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(onPressed: () {}, child: Text('REGISTER')),
+                  SizedBox(width: 8),
+                  ElevatedButton(onPressed: () {}, child: Text('LOG IN'))
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
