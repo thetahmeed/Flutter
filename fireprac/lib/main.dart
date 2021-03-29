@@ -61,6 +61,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    FirebaseAuth.instance.authStateChanges().listen((User user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        print('User is signed in!');
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
