@@ -65,12 +65,39 @@ class _HomePageState extends State<HomePage> {
                   IconButton(
                     icon: Icon(Icons.save, color: Colors.blue),
                     onPressed: () {
-                      addUser(_teNameControler.text);
+                      addUser(_teNameControler.text)
+                          .then((value) => _teNameControler.clear());
                     },
                   )
                 ],
               ),
               Divider(),
+              Expanded(
+                child: StreamBuilder(
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasData) {
+                      return ListView(
+                        children: snapshot.data.docs
+                            .map((e) => ListTile(
+                                  leading:
+                                      CircleAvatar(child: Text(e['name'][0])),
+                                  title: Text(e['name']),
+                                  subtitle:
+                                      Text('Click the name for more details'),
+                                ))
+                            .toList(),
+                      );
+                    } else if (snapshot.hasError) {
+                      return Center(child: Text('Error found'));
+                    } else if (!snapshot.hasData) {
+                      return Text('No data found');
+                    }
+                    return Center(child: CircularProgressIndicator());
+                  },
+                  stream: userCollection.snapshots(),
+                ),
+              ),
             ],
           ),
         ),
