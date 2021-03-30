@@ -73,22 +73,38 @@ class _HomePageState extends State<HomePage> {
               ),
               Divider(),
               Expanded(
-                  child: FutureBuilder(
-                builder: (BuildContext context,
-                    AsyncSnapshot<DocumentSnapshot> snapshot) {
-                  if (snapshot.hasError) {
-                    return Text('Something went wrong');
-                  }
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    Map<String, dynamic> map = snapshot.data.data();
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: _doQuery,
+                      child: Text('QuerySnapshot'),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('DocumentSnapshot'),
+                    ),
+                  ],
+                ),
 
-                    return Text(map['name'].toString());
-                  }
+                /*FutureBuilder(
+                  builder: (BuildContext context,
+                      AsyncSnapshot<DocumentSnapshot> snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Something went wrong');
+                    }
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      Map<String, dynamic> map = snapshot.data.data();
 
-                  return Center(child: CircularProgressIndicator());
-                },
-                future: userCollection.doc('1DYct3XuYS1g7XTaexnb').get(),
-              )),
+                      return Text(map['age'].toString());
+                    }
+
+                    return Center(child: CircularProgressIndicator());
+                  },
+                  future: userCollection.doc('1DYct3XuYS1g7XTaexnb').get(),
+                ),*/
+              ),
 
               /*StreamBuilder(
                   builder: (BuildContext context,
@@ -119,6 +135,18 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  _doQuery() {
+    FirebaseFirestore.instance.collection('users').get().then(
+      (QuerySnapshot querySnapshot) {
+        querySnapshot.docs.forEach(
+          (doc) {
+            print(doc["name"]);
+          },
+        );
+      },
     );
   }
 }
