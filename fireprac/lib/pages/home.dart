@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     SizedBox(width: 8),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: _getDocument,
                       child: Text('DocumentSnapshot'),
                     ),
                   ],
@@ -138,6 +138,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  // to get all the data
   _doQuery() {
     FirebaseFirestore.instance.collection('users').get().then(
       (QuerySnapshot querySnapshot) {
@@ -146,6 +147,24 @@ class _HomePageState extends State<HomePage> {
             print(doc["name"]);
           },
         );
+      },
+    );
+  }
+
+  // to get a specific data
+  _getDocument() {
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc('1DYct3XuYS1g7XTaexnb')
+        .get()
+        .then(
+      (DocumentSnapshot documentSnapshot) {
+        if (documentSnapshot.exists) {
+          print(
+              'Document data: ${documentSnapshot.data()['name']}'); // data method, which returns a Map<String, dynamic>, or null if it does not exist
+        } else {
+          print('Document does not exist on the database');
+        }
       },
     );
   }
