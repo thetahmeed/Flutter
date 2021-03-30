@@ -73,7 +73,24 @@ class _HomePageState extends State<HomePage> {
               ),
               Divider(),
               Expanded(
-                child: StreamBuilder(
+                  child: FutureBuilder(
+                builder: (BuildContext context,
+                    AsyncSnapshot<DocumentSnapshot> snapshot) {
+                  if (snapshot.hasError) {
+                    return Text('Something went wrong');
+                  }
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    Map<String, dynamic> map = snapshot.data.data();
+
+                    return Text(map['name'].toString());
+                  }
+
+                  return Center(child: CircularProgressIndicator());
+                },
+                future: userCollection.doc('1DYct3XuYS1g7XTaexnb').get(),
+              )),
+
+              /*StreamBuilder(
                   builder: (BuildContext context,
                       AsyncSnapshot<QuerySnapshot> snapshot) {
                     if (snapshot.hasData) {
@@ -97,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   stream: userCollection.snapshots(),
                 ),
-              ),
+                  ),*/
             ],
           ),
         ),
