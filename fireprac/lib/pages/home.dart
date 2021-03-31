@@ -20,6 +20,14 @@ class _HomePageState extends State<HomePage> {
     final CollectionReference userCollection =
         FirebaseFirestore.instance.collection('users');
 
+    Future<void> _updateCollectionField() {
+      return userCollection
+          .doc('eSrhvjyafMfDebUOGnv5')
+          .update({'name': 'Shafoyan'})
+          .then((value) => print("User Updated"))
+          .catchError((error) => print("Failed to update user: $error"));
+    }
+
     Future<void> addUser(String name) {
       // Call the user's CollectionReference to add a new user
       return userCollection
@@ -131,6 +139,9 @@ class _HomePageState extends State<HomePage> {
                   stream: userCollection.snapshots(),
                 ),
                   ),*/
+              ElevatedButton(
+                  onPressed: _updateCollectionField,
+                  child: Text('Update data')),
             ],
           ),
         ),
