@@ -46,6 +46,14 @@ class _HomePageState extends State<HomePage> {
           .catchError((error) => print("Failed to add user: $error"));
     }
 
+    Future<void> _deleteData() {
+      return userCollection
+          .doc('doc1')
+          .delete()
+          .then((value) => print("User Deleted"))
+          .catchError((error) => print("Failed to delete user: $error"));
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
@@ -153,6 +161,8 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                   onPressed: _getNestedDocument,
                   child: Text('Get nested data')),
+              ElevatedButton(
+                  onPressed: _deleteData, child: Text('Delete a doc')),
             ],
           ),
         ),
