@@ -150,6 +150,9 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                   onPressed: _updateCollectionField2,
                   child: Text('Update data')),
+              ElevatedButton(
+                  onPressed: _getNestedDocument,
+                  child: Text('Get nested data')),
             ],
           ),
         ),
@@ -181,6 +184,30 @@ class _HomePageState extends State<HomePage> {
         if (documentSnapshot.exists) {
           print(
               'Document data: ${documentSnapshot.data()['name']}'); // data method, which returns a Map<String, dynamic>, or null if it does not exist
+        } else {
+          print('Document does not exist on the database');
+        }
+      },
+    );
+  }
+
+  // to get a nested specific data
+  _getNestedDocument() {
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc('eSrhvjyafMfDebUOGnv5')
+        .get()
+        .then(
+      (DocumentSnapshot documentSnapshot) {
+        if (documentSnapshot.exists) {
+          try {
+            dynamic nested =
+                documentSnapshot.get(FieldPath(['info', 'address', 'zipcode']));
+            print('The data: ');
+            print(nested);
+          } on StateError catch (e) {
+            print('No nested field exists! $e');
+          }
         } else {
           print('Document does not exist on the database');
         }
