@@ -28,6 +28,14 @@ class _HomePageState extends State<HomePage> {
           .catchError((error) => print("Failed to update user: $error"));
     }
 
+    Future<void> _updateCollectionField2() {
+      return userCollection
+          .doc('eSrhvjyafMfDebUOGnv5')
+          .update({'val.child.ab.cd': 7406})
+          .then((value) => print("User Updated"))
+          .catchError((error) => print("Failed to update user: $error"));
+    }
+
     Future<void> addUser(String name) {
       // Call the user's CollectionReference to add a new user
       return userCollection
@@ -140,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                   ),*/
               ElevatedButton(
-                  onPressed: _updateCollectionField,
+                  onPressed: _updateCollectionField2,
                   child: Text('Update data')),
             ],
           ),
