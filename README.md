@@ -1,7 +1,7 @@
 # Flutter
 // basic things about flutter
 
-### :: eleven: Basic things 01
+### 1: eleven: Basic things 01
 1. Text
 2. Container
 3. Raw
@@ -24,9 +24,9 @@
 20. Snack Bar
 21. Toast
 22. Read Local Json
-### :: twelve: Multiple page app, Sending data between them and Reading json data from api
-### :: thirteen: Shared Preferences
-### :: fourteen: Basic things 02
+### 2: twelve: Multiple page app, Sending data between them and Reading json data from api
+### 3: thirteen: Shared Preferences
+### 4: fourteen: Basic things 02
 1. Correct method of using a file from assets
 2. Displaying data by using a Model Class
 3. Option menu, PopupMenu, On Selected, PopupButton, onSelected
@@ -53,9 +53,9 @@
 24. Sliver AppBar
 25. Gradient
 26. State Manegament By Set State
-### :: fifteen: State Management & Data Transfer (By Set State)
-### :: sixteen: State Management & Data Transfer (By Provider)
-### :: seventeen: 
+### 5: fifteen: State Management & Data Transfer (By Set State)
+### 6: sixteen: State Management & Data Transfer (By Provider)
+### 7: seventeen: 
 1. Image picker
 2. Bottom Sheet
 3. Curved Bottom Navigation
