@@ -82,3 +82,4 @@
 ### 8: seventeen:
 ### 8: seventeen:
 1. Connect with Firebase
+2. Create account with Email & Pass
