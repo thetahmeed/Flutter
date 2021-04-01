@@ -80,6 +80,5 @@
 22. Cursor Slider
 23. Cursor Slider with Indicator
 ### 8: seventeen:
-### 8: seventeen:
 1. Connect with Firebase
 2. Create account with Email & Pass
