@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fireprac/pages/home.dart';
+import 'package:fireprac/pages/storage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -71,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           print('User is signed in!');
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(builder: (context) => FbStorage()),
               (route) => false);
         }
       },
@@ -136,7 +137,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: Text('LOG IN'))
                 ],
-              )
+              ),
+              SizedBox(width: 8),
+              ElevatedButton(
+                  onPressed: () {}, child: Text('Sign in with Google'))
             ],
           ),
         ),

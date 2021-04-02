@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Firestore'),
         centerTitle: true,
         actions: [
           IconButton(
