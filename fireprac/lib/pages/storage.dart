@@ -49,18 +49,8 @@ class _FbStorageState extends State<FbStorage> {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: ElevatedButton(
-            onPressed: listExample,
-            child: SizedBox(
-              width: 130,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.image),
-                  Text('Upload image'),
-                ],
-              ),
-            )),
+        child:
+            ElevatedButton(onPressed: listExample, child: Text('Get the list')),
       ),
     );
   }
