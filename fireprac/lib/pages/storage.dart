@@ -51,6 +51,13 @@ class _FbStorageState extends State<FbStorage> {
     });
   }
 
+  Future _uploadImageToFirebase(BuildContext context) async {
+    ref
+        .child('images/img.png')
+        // 'images/' is directory and 'img.png' is the file name
+        .putFile(_image);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +94,11 @@ class _FbStorageState extends State<FbStorage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(onPressed: _pickImage, child: Text('Get image')),
-                ElevatedButton(onPressed: () {}, child: Text('Upload')),
+                ElevatedButton(
+                    onPressed: () {
+                      _uploadImageToFirebase(context);
+                    },
+                    child: Text('Upload')),
               ],
             )
           ],
