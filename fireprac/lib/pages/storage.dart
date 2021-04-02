@@ -49,9 +49,23 @@ class _FbStorageState extends State<FbStorage> {
       ),
       body: Container(
         alignment: Alignment.center,
-        child:
-            ElevatedButton(onPressed: listExample, child: Text('Get the list')),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: listExample, child: Text('Get list')),
+            ElevatedButton(
+                onPressed: _getTheDownloadLink,
+                child: Text('Get a downlaod link')),
+          ],
+        ),
       ),
     );
+  }
+
+  Future<void> _getTheDownloadLink() async {
+    String downloadURL = await firebase_storage.FirebaseStorage.instance
+        .ref('dp/walt1.png')
+        .getDownloadURL();
+    print(downloadURL);
   }
 }
