@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // 01
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:image_picker/image_picker.dart';
 
 class FbStorage extends StatefulWidget {
   FbStorage({Key key}) : super(key: key);
@@ -33,6 +36,21 @@ class _FbStorageState extends State<FbStorage> {
     });
   }
 
+  File _image;
+  final picker = ImagePicker();
+
+  Future _pickImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +74,27 @@ class _FbStorageState extends State<FbStorage> {
             ElevatedButton(
                 onPressed: _getTheDownloadLink,
                 child: Text('Get a downlaod link')),
+            SizedBox(height: 10),
+            SizedBox(
+              width: 200,
+              height: 200,
+              child: _image == null
+                  ? Image.asset('assets/images/place_holder.png')
+                  : Image.file(_image),
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      _pickImage();
+                    },
+                    child: Text('Get image')),
+                ElevatedButton(onPressed: () {}, child: Text('Crop')),
+                ElevatedButton(onPressed: () {}, child: Text('Upload')),
+              ],
+            )
           ],
         ),
       ),
