@@ -40,7 +40,7 @@ class _FbStorageState extends State<FbStorage> {
   final picker = ImagePicker();
 
   Future _pickImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
@@ -86,12 +86,7 @@ class _FbStorageState extends State<FbStorage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      _pickImage();
-                    },
-                    child: Text('Get image')),
-                ElevatedButton(onPressed: () {}, child: Text('Crop')),
+                ElevatedButton(onPressed: _pickImage, child: Text('Get image')),
                 ElevatedButton(onPressed: () {}, child: Text('Upload')),
               ],
             )
