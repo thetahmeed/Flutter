@@ -79,6 +79,6 @@
 21. Rive Animation
 22. Cursor Slider
 23. Cursor Slider with Indicator
-### 8: fireprac:
+### 8: eighteent (fireprac):
 1. Connect with Firebase
 2. Create account with Email & Pass
