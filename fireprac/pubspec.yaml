@@ -33,6 +33,7 @@ dependencies:
   cloud_firestore: "^1.0.3"
   firebase_storage: "^8.0.1"
   image_picker: ^0.7.4
+  google_sign_in: "^4.5.1"
 
 
 dev_dependencies:
