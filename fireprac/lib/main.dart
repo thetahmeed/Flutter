@@ -33,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _teEmailController = TextEditingController();
   final TextEditingController _tePasswordController = TextEditingController();
+  final TextEditingController _teOTPController = TextEditingController();
 
   _signUpUser(String email, String pass) async {
     try {
@@ -78,6 +79,57 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // Once signed in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  _signInbyPhone() async {
+    await auth.verifyPhoneNumber(
+      phoneNumber: '+8801700547406',
+      timeout: Duration(seconds: 60),
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        var result = await auth.signInWithCredential(credential);
+        User user = result.user;
+        if (user != null) {
+          print('Auto sign in complete');
+        } else {
+          print('Auto sign in failed');
+        }
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        print('Error: $e');
+      },
+      codeSent: (String verificationId, int resendToken) {
+        showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: Text('Please enter the OTP'),
+              content: Column(
+                children: [
+                  TextField(
+                    controller: _teOTPController,
+                  ),
+                  ElevatedButton(
+                      onPressed: () async {
+                        var theCode = _teOTPController.text;
+                        PhoneAuthCredential phoneAuthCredential =
+                            PhoneAuthProvider.credential(
+                                verificationId: verificationId,
+                                smsCode: theCode);
+
+                        // Sign the user in (or link) with the credential
+                        await auth.signInWithCredential(phoneAuthCredential);
+                      },
+                      child: Text('VERIFY'))
+                ],
+              ),
+            );
+          },
+        );
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {},
+    );
   }
 
   @override
@@ -160,7 +212,12 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(width: 8),
               ElevatedButton(
                   onPressed: _signInbyGoogle,
-                  child: Text('Sign in with Google'))
+                  child: Text('Sign in with Google')),
+              SizedBox(width: 8),
+              ElevatedButton(
+                  onPressed: _signInbyPhone, child: Text('Sign in with Phone')),
+              SizedBox(width: 8),
+              ElevatedButton(onPressed: () {}, child: Text('Verify phone'))
             ],
           ),
         ),
