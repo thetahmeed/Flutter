@@ -55,7 +55,7 @@ class _FbStorageState extends State<FbStorage> {
     ref
         .child('images/img.png')
         // 'images/' is directory and 'img.png' is the file name
-        .putFile(_image);
+        .delete();
   }
 
   @override
