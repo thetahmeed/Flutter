@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }
@@ -69,8 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ],
       onDone: () {
-        Navigator.push(
-            context, CupertinoPageRoute(builder: (_) => WebViewPage()));
+        Navigator.push(context, CupertinoPageRoute(builder: (_) => HomePage()));
       },
       showDoneButton: true,
       done: Text('Done'),
