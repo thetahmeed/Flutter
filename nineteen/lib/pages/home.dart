@@ -11,38 +11,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Home'),
-          centerTitle: true,
-        ),
-        body: LayoutBuilder(
-          builder: (_, c) {
-            if (c.maxWidth < 600) {
-              return Column(
-                children: [
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                ],
-              );
-            } else {
-              return Row(
-                children: [
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                  Text('Hello'),
-                ],
-              );
-            }
-          },
-        ));
+      appBar: AppBar(
+        title: Text('Home'),
+        centerTitle: true,
+      ),
+      body: OrientationBuilder(
+        builder: (_, o) {
+          if (o == Orientation.portrait) {
+            return Text('Portait');
+          } else {
+            return Text('Landscape');
+          }
+        },
+      ),
+    );
   }
 }
