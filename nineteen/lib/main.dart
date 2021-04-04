@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:nineteen/pages/home.dart';
+import 'package:nineteen/pages/webview.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +69,8 @@ class _SplashScreenState extends State<SplashScreen> {
         ),
       ],
       onDone: () {
-        Navigator.push(context, CupertinoPageRoute(builder: (_) => HomePage()));
+        Navigator.push(
+            context, CupertinoPageRoute(builder: (_) => WebViewPage()));
       },
       showDoneButton: true,
       done: Text('Done'),
