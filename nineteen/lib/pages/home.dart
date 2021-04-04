@@ -14,11 +14,14 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Center(
-        child: AspectRatio(
-          // width / height
-          aspectRatio: 1 / 1,
-          child: Container(
-            color: Colors.pink,
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: AspectRatio(
+            // width / height
+            aspectRatio: 1 / 1,
+            child: Container(
+              color: Colors.pink,
+            ),
           ),
         ),
       ),
