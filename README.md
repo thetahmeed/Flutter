@@ -82,3 +82,23 @@
 ### 8: eighteent (fireprac):
 1. Connect with Firebase
 2. Create account with Email & Pass
+3. Log in with Email & Pass
+4. Check user state
+5. Log out user
+6. Firestore (Add data)
+7. Firestore (Get data)
+8. Firestore (Get single data unrealtime)
+9. Firestore (QuerySnapshot)
+10. Firestore (DocumentSnapshot)
+11. Firestore (Update data)
+12. Firestore (Update nested data)
+13. Firestore (Get Nested Data by FieldPath)
+14. Firestore (Delete a Document)
+15. Firestore (Delete a specific Document)
+16. Storage (Get the list)
+17. Storage (Get download link)
+18. Storage (Get image)
+19. Storage (Upload image)
+20. Storage (Delete image)
+21. Sign in with Google
+22. Sign in with Phone
