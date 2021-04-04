@@ -14,32 +14,13 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Center(
-          child: FittedBox(
-        fit: BoxFit.contain,
-        alignment: Alignment.center,
-        child: Row(
-          children: [
-            Container(
-              color: Colors.red,
-              height: 100,
-              width: 100,
-            ),
-            Container(
-              color: Colors.green,
-              height: 100,
-              width: 100,
-            ),
-            Container(
-              color: Colors.blue,
-              height: 100,
-              width: 100,
-            ),
-            Container(
-              color: Colors.purple,
-              height: 100,
-              width: 100,
-            ),
-          ],
+          child: FractionallySizedBox(
+        heightFactor: 0.06,
+        // 0.6 for 60% of the screen
+        widthFactor: 0.6,
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text('I\'m 60%'),
         ),
       )),
     );
