@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,20 +11,38 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        centerTitle: true,
-      ),
-      body: Center(
-          child: FractionallySizedBox(
-        heightFactor: 0.06,
-        // 0.6 for 60% of the screen
-        widthFactor: 0.6,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text('I\'m 60%'),
+        appBar: AppBar(
+          title: Text('Home'),
+          centerTitle: true,
         ),
-      )),
-    );
+        body: LayoutBuilder(
+          builder: (_, c) {
+            if (c.maxWidth < 600) {
+              return Column(
+                children: [
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                ],
+              );
+            } else {
+              return Row(
+                children: [
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                  Text('Hello'),
+                ],
+              );
+            }
+          },
+        ));
   }
 }
