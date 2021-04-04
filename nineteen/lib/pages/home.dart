@@ -14,17 +14,34 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: Center(
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: AspectRatio(
-            // width / height
-            aspectRatio: 1 / 1,
-            child: Container(
-              color: Colors.pink,
+          child: FittedBox(
+        fit: BoxFit.contain,
+        alignment: Alignment.center,
+        child: Row(
+          children: [
+            Container(
+              color: Colors.red,
+              height: 100,
+              width: 100,
             ),
-          ),
+            Container(
+              color: Colors.green,
+              height: 100,
+              width: 100,
+            ),
+            Container(
+              color: Colors.blue,
+              height: 100,
+              width: 100,
+            ),
+            Container(
+              color: Colors.purple,
+              height: 100,
+              width: 100,
+            ),
+          ],
         ),
-      ),
+      )),
     );
   }
 }
