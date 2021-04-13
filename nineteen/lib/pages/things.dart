@@ -19,10 +19,13 @@ class _LittleThingsState extends State<LittleThings> {
                 width: 100,
                 color: Colors.red,
               ),
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.green,
+              Opacity(
+                opacity: 0.0,
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.green,
+                ),
               ),
               Container(
                 height: 100,
