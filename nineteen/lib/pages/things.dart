@@ -19,7 +19,8 @@ class _LittleThingsState extends State<LittleThings> {
                 width: 100,
                 color: Colors.red,
               ),
-              Opacity(
+              AnimatedOpacity(
+                duration: Duration(seconds: 2),
                 opacity: 0.0,
                 child: Container(
                   height: 100,
