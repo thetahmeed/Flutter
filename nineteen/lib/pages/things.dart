@@ -34,32 +34,20 @@ class _LittleThingsState extends State<LittleThings>
           child: Wrap(
             direction: Axis.horizontal,
             children: [
-              FadeTransition(
-                opacity: _animation,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(18.0),
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.purple,
+                ),
+              ),
+              ClipOval(
                 child: Container(
                   height: 100,
                   width: 100,
                   color: Colors.red,
                 ),
-              ),
-              AnimatedOpacity(
-                duration: Duration(seconds: 2),
-                opacity: 0.0,
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.green,
-                ),
-              ),
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.blue,
-              ),
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.purple,
               ),
             ],
           ),
