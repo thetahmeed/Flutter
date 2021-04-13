@@ -1,3 +1,6 @@
 1. SliverList 
 2. SliverGrid 
 3. FadeInImage
+4. InheritedModel 
+5. CustomPaint 
+6. AbsorbPointer 

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class LittleThings extends StatefulWidget {
@@ -34,12 +36,15 @@ class _LittleThingsState extends State<LittleThings>
           child: Wrap(
             direction: Axis.horizontal,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(18.0),
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.purple,
+              Transform.rotate(
+                angle: pi / 4,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(18.0),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.purple,
+                  ),
                 ),
               ),
               ClipOval(
