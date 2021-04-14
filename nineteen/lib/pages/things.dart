@@ -35,23 +35,11 @@ class _LittleThingsState extends State<LittleThings>
         child: Center(
           child: Row(
             children: [
-              Flexible(
-                fit: FlexFit.loose,
-                flex: 1,
-                child: Container(color: Colors.red, height: 100),
-              ),
-              Flexible(
-                flex: 2,
-                child: Container(color: Colors.green, height: 100),
-              ),
-              Flexible(
-                flex: 3,
-                child: Container(color: Colors.blue, height: 100),
-              ),
-              Flexible(
-                flex: 4,
-                child: Container(color: Colors.pink, height: 100),
-              ),
+              Container(color: Colors.red, height: 100, width: 100),
+              Spacer(flex: 2),
+              Container(color: Colors.green, height: 100, width: 100),
+              Spacer(flex: 1),
+              Container(color: Colors.blue, height: 100, width: 100),
             ],
           ),
         ),
