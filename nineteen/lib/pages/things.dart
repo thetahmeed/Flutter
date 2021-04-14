@@ -6,43 +6,69 @@ class LittleThings extends StatefulWidget {
 }
 
 class _LittleThingsState extends State<LittleThings> {
-  int _counter = 0;
-  double _paddingValue = 0;
+  var _currentIndex = 0;
+  var _c1 = 0;
+  var _c2 = 0;
+  var _c3 = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: AnimatedPadding(
-          padding: EdgeInsets.all(_paddingValue),
-          duration: Duration(milliseconds: 300),
-          curve: Curves.easeIn,
+        child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              AnimatedSwitcher(
-                duration: const Duration(milliseconds: 300),
-                transitionBuilder: (Widget child, Animation<double> animation) {
-                  return ScaleTransition(child: child, scale: animation);
-                },
-                child: Text(
-                  '' + _counter.toString(),
-                  style: TextStyle(fontSize: 26),
-                  key: ValueKey<int>(_counter),
-                ),
+              IndexedStack(
+                index: _currentIndex,
+                children: [
+                  Column(
+                    children: [
+                      Text('$_c1'),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _c1++;
+                          });
+                        },
+                        child: Text('+'),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text('$_c2'),
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            _c2++;
+                          });
+                        },
+                        child: Text('+'),
+                      )
+                    ],
+                  ),
+                ],
               ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
+              Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.looks_one),
                     onPressed: () {
                       setState(() {
-                        _counter++;
-                        _paddingValue = 18.0;
+                        _currentIndex = 0;
                       });
                     },
-                    child: Text('Click')),
-              )
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.looks_two),
+                    onPressed: () {
+                      setState(() {
+                        _currentIndex = 1;
+                      });
+                    },
+                  )
+                ],
+              ),
             ],
           ),
         ),
