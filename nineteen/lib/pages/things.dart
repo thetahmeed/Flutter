@@ -33,13 +33,25 @@ class _LittleThingsState extends State<LittleThings>
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Wrap(
-            direction: Axis.horizontal,
+          child: Row(
             children: [
-              SizedBox(
-                  width: double.infinity,
-                  height: 200,
-                  child: ElevatedButton(onPressed: () {}, child: Text('data'))),
+              Flexible(
+                fit: FlexFit.loose,
+                flex: 1,
+                child: Container(color: Colors.red, height: 100),
+              ),
+              Flexible(
+                flex: 2,
+                child: Container(color: Colors.green, height: 100),
+              ),
+              Flexible(
+                flex: 3,
+                child: Container(color: Colors.blue, height: 100),
+              ),
+              Flexible(
+                flex: 4,
+                child: Container(color: Colors.pink, height: 100),
+              ),
             ],
           ),
         ),
