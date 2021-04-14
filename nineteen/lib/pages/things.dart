@@ -36,24 +36,10 @@ class _LittleThingsState extends State<LittleThings>
           child: Wrap(
             direction: Axis.horizontal,
             children: [
-              Transform.rotate(
-                angle: pi / 4,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(18.0),
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    color: Colors.purple,
-                  ),
-                ),
-              ),
-              ClipOval(
-                child: Container(
-                  height: 100,
-                  width: 100,
-                  color: Colors.red,
-                ),
-              ),
+              SizedBox(
+                  width: double.infinity,
+                  height: 200,
+                  child: ElevatedButton(onPressed: () {}, child: Text('data'))),
             ],
           ),
         ),

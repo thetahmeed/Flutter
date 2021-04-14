@@ -4,3 +4,4 @@
 4. InheritedModel 
 5. CustomPaint 
 6. AbsorbPointer 
+7. AnimatedBuilder 
