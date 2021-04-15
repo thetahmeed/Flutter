@@ -6,41 +6,30 @@ class LittleThings extends StatefulWidget {
 }
 
 class _LittleThingsState extends State<LittleThings> {
-  var _currentIndex = 0;
-  var _c1 = 0;
-  var _c2 = 0;
-  var _c3 = 0;
-
-  double _opacityControl = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            FractionallySizedBox(
-              alignment: Alignment.center,
-              widthFactor: 0.6,
-              child: ElevatedButton(onPressed: () {}, child: Text('abc')),
+          child: DraggableScrollableSheet(
+        initialChildSize: 0.4,
+        minChildSize: 0.2,
+        maxChildSize: 0.5,
+        builder: (context, sController) {
+          return SingleChildScrollView(
+            controller: sController,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.purple,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                ),
+              ),
+              height: 400,
             ),
-            FractionallySizedBox(
-              alignment: Alignment.center,
-              widthFactor: 0.8,
-              child: ElevatedButton(onPressed: () {}, child: Text('abc')),
-            ),
-            SelectableText(
-              'Trust me or not I am a selectable text.',
-              showCursor: true,
-              cursorWidth: 3,
-              cursorColor: Colors.red,
-              cursorRadius: Radius.circular(15),
-              toolbarOptions: ToolbarOptions(
-                  copy: true, cut: true, paste: true, selectAll: true),
-            )
-          ],
-        ),
-      ),
+          );
+        },
+      )),
     );
   }
 }
