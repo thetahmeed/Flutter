@@ -6,35 +6,32 @@ class LittleThings extends StatefulWidget {
 }
 
 class _LittleThingsState extends State<LittleThings> {
+  List<bool> _selections = List.generate(3, (index) => false);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: DraggableScrollableSheet(
-        initialChildSize: 0.4,
-        minChildSize: 0.2,
-        maxChildSize: 0.5,
-        builder: (context, sController) {
-          return SingleChildScrollView(
-            controller: sController,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.purple,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25),
-                  topRight: Radius.circular(25),
-                ),
-              ),
-              height: 400,
-              child: ColorFiltered(
-                colorFilter: ColorFilter.mode(Colors.pink, BlendMode.lighten),
-                child: Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Vector-based_example.svg/220px-Vector-based_example.svg.png'),
-              ),
-            ),
-          );
-        },
-      )),
+        child: Center(
+          child: ToggleButtons(
+            children: [
+              Icon(Icons.camera_rounded),
+              Icon(Icons.photo_size_select_actual_rounded),
+              Icon(Icons.info)
+            ],
+            isSelected: _selections,
+            onPressed: (i) {
+              setState(() {
+                _selections[i] = !_selections[i];
+              });
+            },
+            color: Colors.grey,
+            selectedBorderColor: Colors.pink,
+            selectedColor: Colors.pink,
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+          ),
+        ),
+      ),
     );
   }
 }
