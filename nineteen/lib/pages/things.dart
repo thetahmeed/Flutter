@@ -18,56 +18,13 @@ class _LittleThingsState extends State<LittleThings> {
         child: Center(
           child: Column(
             children: [
-              IndexedStack(
-                index: _currentIndex,
-                children: [
-                  Column(
-                    children: [
-                      Text('$_c1'),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            _c1++;
-                          });
-                        },
-                        child: Text('+'),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text('$_c2'),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            _c2++;
-                          });
-                        },
-                        child: Text('+'),
-                      )
-                    ],
-                  ),
-                ],
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 200),
+                child: Text('I am not in danger, I am the danger - Heisenberg'),
               ),
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.looks_one),
-                    onPressed: () {
-                      setState(() {
-                        _currentIndex = 0;
-                      });
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.looks_two),
-                    onPressed: () {
-                      setState(() {
-                        _currentIndex = 1;
-                      });
-                    },
-                  )
-                ],
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 200),
+                child: Container(height: 100, color: Colors.red),
               ),
             ],
           ),
