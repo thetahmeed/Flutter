@@ -29,6 +29,15 @@ class _LittleThingsState extends State<LittleThings> {
               widthFactor: 0.8,
               child: ElevatedButton(onPressed: () {}, child: Text('abc')),
             ),
+            SelectableText(
+              'Trust me or not I am a selectable text.',
+              showCursor: true,
+              cursorWidth: 3,
+              cursorColor: Colors.red,
+              cursorRadius: Radius.circular(15),
+              toolbarOptions: ToolbarOptions(
+                  copy: true, cut: true, paste: true, selectAll: true),
+            )
           ],
         ),
       ),
