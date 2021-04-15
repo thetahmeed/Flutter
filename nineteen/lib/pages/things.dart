@@ -11,6 +11,8 @@ class _LittleThingsState extends State<LittleThings> {
   var _c2 = 0;
   var _c3 = 0;
 
+  double _opacityControl = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +26,21 @@ class _LittleThingsState extends State<LittleThings> {
               ),
               ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: 200),
-                child: Container(height: 100, color: Colors.red),
+                child: AnimatedOpacity(
+                  opacity: _opacityControl,
+                  duration: Duration(milliseconds: 500),
+                  child: Container(height: 100, color: Colors.red),
+                ),
               ),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _opacityControl == 0
+                          ? _opacityControl = 1
+                          : _opacityControl = 0;
+                    });
+                  },
+                  child: Text('Click to visible the box'))
             ],
           ),
         ),
