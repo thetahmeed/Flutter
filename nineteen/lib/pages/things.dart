@@ -26,6 +26,11 @@ class _LittleThingsState extends State<LittleThings> {
                 ),
               ),
               height: 400,
+              child: ColorFiltered(
+                colorFilter: ColorFilter.mode(Colors.pink, BlendMode.lighten),
+                child: Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Vector-based_example.svg/220px-Vector-based_example.svg.png'),
+              ),
             ),
           );
         },
