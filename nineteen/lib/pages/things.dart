@@ -11,15 +11,13 @@ class _LittleThingsState extends State<LittleThings> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Center(
-        child: IgnorePointer(
-          ignoring: true,
-          child: ElevatedButton(
-            child: Text('I am ignored'),
-            onPressed: () {},
+        child: Center(
+          child: CupertinoActivityIndicator(
+            animating: true,
+            radius: 50,
           ),
         ),
-      )),
+      ),
     );
   }
 }
