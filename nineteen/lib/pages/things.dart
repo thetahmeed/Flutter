@@ -11,26 +11,17 @@ class _LittleThingsState extends State<LittleThings> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: ShaderMask(
-            shaderCallback: (bounds) => RadialGradient(
-                    center: Alignment.topLeft,
-                    radius: 1.0,
-                    colors: [
-                      Colors.yellow,
-                      Colors.deepOrange,
-                    ],
-                    tileMode: TileMode.mirror)
-                .createShader(bounds),
-            child: Text(
-              'Burning Text',
-              style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white),
-            ),
-          ),
-        ),
+        child: Center(child: Builder(
+          builder: (BuildContext context) {
+            return ElevatedButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text('data')));
+              },
+              child: Text('Show'),
+            );
+          },
+        )),
       ),
     );
   }
