@@ -7,29 +7,54 @@ class LittleThings extends StatefulWidget {
 }
 
 class _LittleThingsState extends State<LittleThings> {
-  bool _checked1 = false;
-  bool _checked2 = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-            child: TextButton(
-                onPressed: () {
-                  showAboutDialog(
-                      context: context,
-                      applicationIcon: Image.network(
-                        'https://i.pinimg.com/564x/c1/65/1f/c1651f598d212acdfe551f103548e495.jpg',
-                        height: 50,
-                        width: 50,
-                      ),
-                      applicationName: 'App Name',
-                      applicationVersion: '1.0',
-                      applicationLegalese: 'bids ehfwje',
-                      children: [Text('data'), Text('data2')]);
-                },
-                child: Text('About'))),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            //title: Text('Sliver Appbar'),
+            expandedHeight: 140,
+            stretch: true,
+            pinned: true,
+            snap: true,
+            floating: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text('Title'),
+              background: Image.network(
+                'https://asia.olympus-imaging.com/content/000101305.jpg',
+                fit: BoxFit.cover,
+              ),
+              stretchModes: [
+                StretchMode.blurBackground,
+                StretchMode.zoomBackground,
+                StretchMode.fadeTitle
+              ],
+            ),
+          ),
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
+              child: Center(
+                child: Text('Scroll to see the SliverAppBar in effect.'),
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                  color: index.isOdd ? Colors.white : Colors.black12,
+                  height: 100.0,
+                  child: Center(
+                    child: Text('$index', textScaleFactor: 5),
+                  ),
+                );
+              },
+              childCount: 20,
+            ),
+          ),
+        ],
       ),
     );
   }
