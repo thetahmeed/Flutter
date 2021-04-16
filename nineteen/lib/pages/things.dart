@@ -15,35 +15,21 @@ class _LittleThingsState extends State<LittleThings> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: ListView(
-            children: [
-              CheckboxListTile(
-                title: Text('Title'),
-                subtitle: Text('Subtitle'),
-                secondary: Icon(Icons.more_vert),
-                controlAffinity: ListTileControlAffinity.leading,
-                value: _checked1,
-                onChanged: (v) {
-                  setState(() {
-                    _checked1 = v;
-                  });
+            child: TextButton(
+                onPressed: () {
+                  showAboutDialog(
+                      context: context,
+                      applicationIcon: Image.network(
+                        'https://i.pinimg.com/564x/c1/65/1f/c1651f598d212acdfe551f103548e495.jpg',
+                        height: 50,
+                        width: 50,
+                      ),
+                      applicationName: 'App Name',
+                      applicationVersion: '1.0',
+                      applicationLegalese: 'bids ehfwje',
+                      children: [Text('data'), Text('data2')]);
                 },
-              ),
-              CheckboxListTile(
-                title: Text('Title'),
-                subtitle: Text('Subtitle'),
-                secondary: Icon(Icons.more_vert),
-                controlAffinity: ListTileControlAffinity.leading,
-                value: _checked2,
-                onChanged: (v) {
-                  setState(() {
-                    _checked2 = v;
-                  });
-                },
-              ),
-            ],
-          ),
-        ),
+                child: Text('About'))),
       ),
     );
   }
