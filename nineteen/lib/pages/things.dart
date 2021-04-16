@@ -7,55 +7,25 @@ class LittleThings extends StatefulWidget {
 }
 
 class _LittleThingsState extends State<LittleThings> {
+  var _imgLink =
+      'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_2400/https://blog.snappa.com/wp-content/uploads/2017/08/youtube-channel-art-size.png';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            //title: Text('Sliver Appbar'),
-            expandedHeight: 140,
-            stretch: true,
-            pinned: true,
-            snap: true,
-            floating: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Title'),
-              background: Image.network(
-                'https://asia.olympus-imaging.com/content/000101305.jpg',
-                fit: BoxFit.cover,
-              ),
-              stretchModes: [
-                StretchMode.blurBackground,
-                StretchMode.zoomBackground,
-                StretchMode.fadeTitle
-              ],
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 20,
-              child: Center(
-                child: Text('Scroll to see the SliverAppBar in effect.'),
-              ),
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Container(
-                  color: index.isOdd ? Colors.white : Colors.black12,
-                  height: 100.0,
-                  child: Center(
-                    child: Text('$index', textScaleFactor: 5),
-                  ),
-                );
-              },
-              childCount: 20,
-            ),
-          ),
-        ],
+        body: SafeArea(
+      child: InteractiveViewer(
+        child: Container(
+          height: 120,
+          width: 600,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.red,
+            Colors.green,
+            Colors.pink,
+          ])),
+        ) /*Image.network(_imgLink)*/,
       ),
-    );
+    ));
   }
 }
