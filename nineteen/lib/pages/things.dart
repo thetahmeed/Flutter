@@ -7,92 +7,31 @@ class LittleThings extends StatefulWidget {
 }
 
 class _LittleThingsState extends State<LittleThings> {
-  List<bool> _selections = List.generate(3, (index) => false);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListWheelScrollView(
-          itemExtent: 100,
-          diameterRatio: 2.0,
-          offAxisFraction: -1.0,
-          children: [
-            Container(
-              color: Colors.purple,
-              height: 100,
+        child: Center(
+          child: ShaderMask(
+            shaderCallback: (bounds) => RadialGradient(
+                    center: Alignment.topLeft,
+                    radius: 1.0,
+                    colors: [
+                      Colors.yellow,
+                      Colors.deepOrange,
+                    ],
+                    tileMode: TileMode.mirror)
+                .createShader(bounds),
+            child: Text(
+              'Burning Text',
+              style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white),
             ),
-            Container(
-              color: Colors.blue,
-              height: 100,
-            ),
-            Container(
-              color: Colors.indigo,
-              height: 100,
-            ),
-            Container(
-              color: Colors.green,
-              height: 100,
-            ),
-            Container(
-              color: Colors.yellow,
-              height: 100,
-            ),
-            Container(
-              color: Colors.red,
-              height: 100,
-            ),
-            Container(
-              color: Colors.purple,
-              height: 100,
-            ),
-            Container(
-              color: Colors.blue,
-              height: 100,
-            ),
-            Container(
-              color: Colors.indigo,
-              height: 100,
-            ),
-            Container(
-              color: Colors.green,
-              height: 100,
-            ),
-            Container(
-              color: Colors.yellow,
-              height: 100,
-            ),
-            Container(
-              color: Colors.red,
-              height: 100,
-            ),
-          ],
+          ),
         ),
       ),
-    );
-  }
-
-  Widget _theSheet(BuildContext context) {
-    return CupertinoActionSheet(
-      title: Text('Title'),
-      message: Text('This is a message'),
-      actions: [
-        CupertinoActionSheetAction(
-          onPressed: () {},
-          child: Text('Data1'),
-          isDefaultAction: true,
-        ),
-        CupertinoActionSheetAction(
-          onPressed: () {},
-          child: Text('Data1'),
-          isDestructiveAction: true,
-        ),
-      ],
-      cancelButton: CupertinoActionSheetAction(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Cancel')),
     );
   }
 }
