@@ -11,18 +11,15 @@ class _LittleThingsState extends State<LittleThings> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(child: Builder(
-          builder: (BuildContext context) {
-            return ElevatedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text('data')));
-              },
-              child: Text('Show'),
-            );
-          },
-        )),
-      ),
+          child: Center(
+        child: IgnorePointer(
+          ignoring: true,
+          child: ElevatedButton(
+            child: Text('I am ignored'),
+            onPressed: () {},
+          ),
+        ),
+      )),
     );
   }
 }
