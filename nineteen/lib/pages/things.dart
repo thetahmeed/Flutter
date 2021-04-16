@@ -13,12 +13,60 @@ class _LittleThingsState extends State<LittleThings> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: CupertinoButton(
-          onPressed: () {
-            showCupertinoModalPopup(
-                context: context, builder: (context) => _theSheet(context));
-          },
-          child: Text('Click here'),
+        child: ListWheelScrollView(
+          itemExtent: 100,
+          diameterRatio: 2.0,
+          offAxisFraction: -1.0,
+          children: [
+            Container(
+              color: Colors.purple,
+              height: 100,
+            ),
+            Container(
+              color: Colors.blue,
+              height: 100,
+            ),
+            Container(
+              color: Colors.indigo,
+              height: 100,
+            ),
+            Container(
+              color: Colors.green,
+              height: 100,
+            ),
+            Container(
+              color: Colors.yellow,
+              height: 100,
+            ),
+            Container(
+              color: Colors.red,
+              height: 100,
+            ),
+            Container(
+              color: Colors.purple,
+              height: 100,
+            ),
+            Container(
+              color: Colors.blue,
+              height: 100,
+            ),
+            Container(
+              color: Colors.indigo,
+              height: 100,
+            ),
+            Container(
+              color: Colors.green,
+              height: 100,
+            ),
+            Container(
+              color: Colors.yellow,
+              height: 100,
+            ),
+            Container(
+              color: Colors.red,
+              height: 100,
+            ),
+          ],
         ),
       ),
     );
