@@ -16,3 +16,4 @@
 16. TweenAnimationBuilder 
 17. NotificationListener 
 18. ClipPath 
+19. AnimatedWidget 
