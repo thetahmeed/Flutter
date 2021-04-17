@@ -23,3 +23,4 @@
 #Package
 1. async
 2. sqflite 
+3. device_info 
