@@ -16,17 +16,19 @@ class _LittleThingsState extends State<LittleThings> {
         body: SafeArea(
           child: Column(
             children: [
-              ImageFiltered(
-                imageFilter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                child: Image.network(
-                  'https://i.pinimg.com/564x/c1/65/1f/c1651f598d212acdfe551f103548e495.jpg',
-                  height: 150,
-                  width: 150,
+              Align(
+                alignment: Alignment.center,
+                child: PhysicalModel(
+                  color: Colors.black,
+                  shadowColor: Colors.black,
+                  elevation: 8.0,
+                  child: Image.network(
+                    'https://i.pinimg.com/564x/c1/65/1f/c1651f598d212acdfe551f103548e495.jpg',
+                    height: 150,
+                    width: 150,
+                  ),
                 ),
               ),
-              Text('Blur1'),
-              Text('Blur2'),
-              Text('Blur3'),
             ],
           ),
         ),
