@@ -18,6 +18,7 @@
 17. NotificationListener 
 18. ClipPath 
 19. AnimatedWidget 
+20. SwitchListTile 
 
 #Package
 1. async

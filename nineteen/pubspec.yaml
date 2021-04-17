@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   introduction_screen: ^2.1.0
   webview_flutter: ^2.0.3
+  location: ^4.1.1
 
 dev_dependencies:
   flutter_test:
