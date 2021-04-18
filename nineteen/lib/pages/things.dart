@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:animations/animations.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class LittleThings extends StatefulWidget {
   @override
@@ -15,18 +15,125 @@ class _LittleThingsState extends State<LittleThings> {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Column(
+          child: ListView(
+            physics: BouncingScrollPhysics(),
             children: [
-              Align(
-                alignment: Alignment.center,
-                child: OpenContainer(
-                  closedBuilder: (context, action) {
-                    return _theImage();
-                  },
-                  openBuilder: (context, action) {
-                    return BigPage();
-                  },
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
                 ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              Slidable(
+                actionPane: SlidableScrollActionPane(),
+                actions: [
+                  IconSlideAction(
+                    icon: Icons.save_rounded,
+                    caption: 'Save',
+                    color: Colors.green,
+                    onTap: () {},
+                  ),
+                  IconSlideAction(
+                    icon: Icons.share_rounded,
+                    caption: 'Share',
+                    color: Colors.green,
+                    onTap: () {},
+                  ),
+                ],
+                secondaryActions: [
+                  IconSlideAction(
+                    icon: Icons.save_rounded,
+                    caption: 'Delete',
+                    color: Colors.red,
+                    onTap: () {},
+                  ),
+                ],
+                actionExtentRatio: 0.2,
+                child: ListTile(
+                  leading: CircleAvatar(
+                    child: Text('f'),
+                  ),
+                  title: Text('Name'),
+                  subtitle: Text('eamil@gmail.com'),
+                ),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  child: Text('f'),
+                ),
+                title: Text('Name'),
+                subtitle: Text('eamil@gmail.com'),
               ),
             ],
           ),
