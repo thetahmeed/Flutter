@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewPage extends StatefulWidget {
   @override
@@ -17,7 +16,9 @@ class _WebViewPageState extends State<WebViewPage> {
         title: Text('Google'),
         centerTitle: true,
       ),
-      body: WebView(
+      body: Text('data'),
+
+      /*WebView(
         initialUrl: 'https://pub.dev/packages/webview_flutter/example',
         javascriptMode: JavascriptMode.unrestricted,
         onProgress: (int progress) {
@@ -38,7 +39,7 @@ class _WebViewPageState extends State<WebViewPage> {
           print('Page finished loading: $url');
         },
         gestureNavigationEnabled: true,
-      ),
+      ),*/
     );
   }
 }
