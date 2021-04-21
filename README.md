@@ -158,3 +158,11 @@
 138. CheckboxListTile
 139. showAboutDialog
 140. SliverAppBar
+141. InteractiveViewer
+142.  package : Location
+143. pachkage : device_info
+144. ImageFiltered
+145. PhysicalModel
+146. package : animation
+147. package : flutter_slidable
+148. RotatedBox
