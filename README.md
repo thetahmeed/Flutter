@@ -133,4 +133,8 @@
 113. AnimatedOpacity
 114. FadeTransition
 115. ClipRRect
-116. 
+116. Transform
+117. double.infinity
+118. Flexible
+119. Spacer
+120. PlaceHolder
