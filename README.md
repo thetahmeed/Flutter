@@ -143,3 +143,9 @@
 123. AnimatedPadding
 124. IndexedStack
 125. ConstrainedBox
+126. AnimatedOpacity
+127. FractionallySizedBox
+128. SelectableText
+129. DraggableScrollableSheet
+130. ColorFiltered
+131. 
