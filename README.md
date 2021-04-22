@@ -1,5 +1,5 @@
 # Flutter
-// basic things about flutter (Covered 148 topics)
+// basic things about flutter (Covered 147+ topics)
 
 ### 1: eleven: Basic things 01
 1. Text
