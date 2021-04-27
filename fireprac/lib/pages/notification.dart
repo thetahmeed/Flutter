@@ -32,7 +32,8 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
             'click_action': 'FLUTTER_NOTIFICATION_CLICK',
             'id': id
           },
-          'to': await FirebaseMessaging.instance.getToken()
+          'to':
+              'fM-yQ_mQQLKwFjQeMal7ej:APA91bFdWIwd2_xD3XYCAdBe4hIUNitTFGWv_crly8DpIYFszVPKcBy6xrPqhxJRyXYtuU5S1EJgRe7XupD-HhI3tW44XoYlhVhZ_he4q9wMimh04OjsLnI0FUfbnh9VGDw1upRmBYu6'
         },
       ),
     );
@@ -61,13 +62,26 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-          child: ElevatedButton(
-        child: Text('Send notofication'),
-        onPressed: () {
-          _sendNotification('asd', 'zxc', 'xc');
-        },
-      )),
+      body: SafeArea(
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: Text('Send notofication'),
+              onPressed: () {
+                _sendNotification('asd', 'zxc', 'xc');
+              },
+            ),
+            ElevatedButton(
+              child: Text('Subscribe'),
+              onPressed: () {},
+            ),
+            ElevatedButton(
+              child: Text('Unsubscribe'),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
