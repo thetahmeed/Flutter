@@ -32,8 +32,7 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
             'click_action': 'FLUTTER_NOTIFICATION_CLICK',
             'id': id
           },
-          'to':
-              'fM-yQ_mQQLKwFjQeMal7ej:APA91bFdWIwd2_xD3XYCAdBe4hIUNitTFGWv_crly8DpIYFszVPKcBy6xrPqhxJRyXYtuU5S1EJgRe7XupD-HhI3tW44XoYlhVhZ_he4q9wMimh04OjsLnI0FUfbnh9VGDw1upRmBYu6'
+          'to': '/topics/weather'
         },
       ),
     );
