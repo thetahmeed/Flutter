@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 
 class NotificationTestPage extends StatefulWidget {
@@ -38,6 +39,22 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
     );
   }
 
+  _showinstantNotification(String title, String body) async {
+    FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+        FlutterLocalNotificationsPlugin();
+
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+        AndroidNotificationDetails(
+            'your channel id', 'your channel name', 'your channel description',
+            importance: Importance.max,
+            priority: Priority.high,
+            showWhen: false);
+    const NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin
+        .show(0, title, body, platformChannelSpecifics, payload: 'item x');
+  }
+
   @override
   void initState() {
     super.initState();
@@ -50,6 +67,8 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
       print('Title: ' + event.notification.title);
       print('Body: ' + event.notification.body);
       print(event.data['click_action']);
+      _showinstantNotification(event.notification.title.toString(),
+          event.notification.body.toString());
     });
 
     // Open a specific route/activity by clicking on notification
