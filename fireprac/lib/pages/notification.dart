@@ -73,11 +73,16 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
             ),
             ElevatedButton(
               child: Text('Subscribe'),
-              onPressed: () {},
+              onPressed: () async {
+                await FirebaseMessaging.instance.subscribeToTopic('weather');
+              },
             ),
             ElevatedButton(
               child: Text('Unsubscribe'),
-              onPressed: () {},
+              onPressed: () async {
+                await FirebaseMessaging.instance
+                    .unsubscribeFromTopic('weather');
+              },
             ),
           ],
         ),
