@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:http/http.dart' as http;
 
 class NotificationTestPage extends StatefulWidget {
   @override
@@ -8,6 +11,32 @@ class NotificationTestPage extends StatefulWidget {
 
 class _NotificationTestPageState extends State<NotificationTestPage> {
   var fbm = FirebaseMessaging.instance;
+  var serverToken =
+      'AAAADiS-4rU:APA91bHZclg4YKPxH2biCfW79dkpxnVJAXMD7xxCEVw9SS30n4IS36Egi7CTaXR6VyAV1lW3iW_4R9-M7gX8XcnsTkUUKVQ0-8wOvaN4-HKE1-hZegCAty7eNNTV8ePIsQNlRCdJzvoA';
+
+  _sendNotification(String title, String body, String id) async {
+    await http.post(
+      Uri.parse('https://fcm.googleapis.com/fcm/send'),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        'Authorization': 'key=$serverToken',
+      },
+      body: jsonEncode(
+        <String, dynamic>{
+          'notification': <String, dynamic>{
+            'body': body.toString(),
+            'title': title.toString()
+          },
+          'priority': 'high',
+          'data': <String, dynamic>{
+            'click_action': 'FLUTTER_NOTIFICATION_CLICK',
+            'id': id
+          },
+          'to': await FirebaseMessaging.instance.getToken()
+        },
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -33,8 +62,12 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('This is a data'),
-      ),
+          child: ElevatedButton(
+        child: Text('Send notofication'),
+        onPressed: () {
+          _sendNotification('asd', 'zxc', 'xc');
+        },
+      )),
     );
   }
 }
