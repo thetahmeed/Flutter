@@ -49,6 +49,7 @@ class _NotificationTestPageState extends State<NotificationTestPage> {
           '============================Notification data (Forground)=======================');
       print('Title: ' + event.notification.title);
       print('Body: ' + event.notification.body);
+      print(event.data['click_action']);
     });
 
     // Open a specific route/activity by clicking on notification
