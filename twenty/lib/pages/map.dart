@@ -66,6 +66,15 @@ class _MyMapPageState extends State<MyMapPage> {
                 '======================================Current location=========================');
             print(_currentLocation.latitude);
             print(_currentLocation.longitude);
+            print(
+                '======================================Current location to Bangladesh National Parliament (23.7623568,90.3783854)=========================');
+            var _theDistance = Geolocator.distanceBetween(
+                _currentLocation.latitude,
+                _currentLocation.longitude,
+                23.7623568,
+                90.3783854);
+            var _theDistance2 = _theDistance / 1000;
+            print('Distance (km): $_theDistance2');
           },
           child: Text('Get current location'),
         ),
