@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -12,11 +13,10 @@ class MyMapPage extends StatefulWidget {
 class _MyMapPageState extends State<MyMapPage> {
   Completer<GoogleMapController> _controller = Completer();
   Position _currentLocation;
+  var _lat;
+  var _long;
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(23.6850, 90.3563),
-    zoom: 14.4746,
-  );
+  CameraPosition _myLocation;
 
   // Services Location = Enable => true
   Future _getLocationPermission() async {
@@ -32,23 +32,33 @@ class _MyMapPageState extends State<MyMapPage> {
       lPermission = await Geolocator.requestPermission();
       if (lPermission == LocationPermission.always ||
           lPermission == LocationPermission.whileInUse) {
-        _getCurrentLocation();
-        print(_getCurrentLocation());
+        //_getCurrentLocation();
       }
     }
   }
 
   // Getting current location
-  Future<Position> _getCurrentLocation() async {
-    return await Geolocator.getCurrentPosition(
+  Future<void> _getCurrentLocation() async {
+    _currentLocation = await Geolocator.getCurrentPosition(
             desiredAccuracy: LocationAccuracy.high)
         .then((value) => value);
+
+    _lat = _currentLocation.latitude;
+    _long = _currentLocation.longitude;
+
+    setState(() {
+      _myLocation = CameraPosition(
+        target: LatLng(_lat, _long),
+        zoom: 20,
+      );
+    });
   }
 
   @override
   void initState() {
     super.initState();
     _getLocationPermission();
+    _getCurrentLocation();
   }
 
   @override
@@ -59,32 +69,15 @@ class _MyMapPageState extends State<MyMapPage> {
         centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () async {
-            _currentLocation = await _getCurrentLocation();
-            print(
-                '======================================Current location=========================');
-            print(_currentLocation.latitude);
-            print(_currentLocation.longitude);
-            print(
-                '======================================Current location to Bangladesh National Parliament (23.7623568,90.3783854)=========================');
-            var _theDistance = Geolocator.distanceBetween(
-                _currentLocation.latitude,
-                _currentLocation.longitude,
-                23.7623568,
-                90.3783854);
-            var _theDistance2 = _theDistance / 1000;
-            print('Distance (km): $_theDistance2');
-          },
-          child: Text('Get current location'),
-        ),
-        /*GoogleMap(
-          mapType: MapType.normal,
-          initialCameraPosition: _kGooglePlex,
-          onMapCreated: (GoogleMapController controller) {
-            _controller.complete(controller);
-          },
-        ),*/
+        child: _myLocation == null
+            ? CircularProgressIndicator()
+            : GoogleMap(
+                mapType: MapType.normal,
+                initialCameraPosition: _myLocation,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                },
+              ),
       ),
     );
   }
