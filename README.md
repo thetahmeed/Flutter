@@ -1,5 +1,5 @@
 # Flutter
-// basic things about flutter (Covered 147+ topics)
+// basic things about flutter (Covered 149+ topics)
 
 ### 1: eleven: Basic things 01
 1. Text
@@ -117,6 +117,8 @@
 99. Storage (Delete image)
 100. Sign in with Google
 101. Sign in with Phone
+101.1. Firebase Cloud Messaging (Push notification)
+101.2. Firebase Forground Cloud Message with Flutter Local Notification
 
 ### 9: nineteen:
 102. Introduction screen
