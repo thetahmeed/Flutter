@@ -16,6 +16,15 @@ class _MyMapPageState extends State<MyMapPage> {
     zoom: 14.4746,
   );
 
+  Future _getLocationPermission() {
+    bool services;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
