@@ -94,7 +94,7 @@ class _MyMapPageState extends State<MyMapPage> {
 
   Set<Marker> _marker = {
     Marker(
-      visible: true,
+      visible: false,
       onTap: () {
         print('=======02');
       },
@@ -127,6 +127,13 @@ class _MyMapPageState extends State<MyMapPage> {
                   initialCameraPosition: _myLocation,
                   onMapCreated: (GoogleMapController controller) {
                     _gmc = controller;
+                  },
+                  onTap: (LatLng _selectedLatLng) {
+                    setState(() {
+                      _marker.remove(Marker(markerId: MarkerId('1')));
+                      _marker.add(Marker(
+                          markerId: MarkerId('1'), position: _selectedLatLng));
+                    });
                   },
                 ),
           Column(
