@@ -64,6 +64,13 @@ class _MyMapPageState extends State<MyMapPage> {
   GoogleMapController _gmc;
   Set<Marker> _marker = {
     Marker(
+      draggable: true,
+      onDragEnd: (LatLng _endLocation) {
+        print(
+            '=====================================New Location================');
+        print(_endLocation.latitude);
+        print(_endLocation.longitude);
+      },
       onTap: () {
         print('=======01');
       },
