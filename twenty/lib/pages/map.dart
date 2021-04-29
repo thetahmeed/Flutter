@@ -61,6 +61,8 @@ class _MyMapPageState extends State<MyMapPage> {
     _getCurrentLocation();
   }
 
+  GoogleMapController _gmc;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,16 +70,26 @@ class _MyMapPageState extends State<MyMapPage> {
         title: Text('mMap'),
         centerTitle: true,
       ),
-      body: Center(
-        child: _myLocation == null
-            ? CircularProgressIndicator()
-            : GoogleMap(
-                mapType: MapType.normal,
-                initialCameraPosition: _myLocation,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
-                },
-              ),
+      body: Stack(
+        alignment: Alignment.bottomLeft,
+        children: [
+          _myLocation == null
+              ? CircularProgressIndicator()
+              : GoogleMap(
+                  mapType: MapType.normal,
+                  initialCameraPosition: _myLocation,
+                  onMapCreated: (GoogleMapController controller) {
+                    _gmc = controller;
+                  },
+                ),
+          ElevatedButton(
+              onPressed: () {
+                _gmc.animateCamera(
+                  CameraUpdate.newLatLng(LatLng(22.8251765, 91.0821882)),
+                );
+              },
+              child: Text('Move to Noyakhali')),
+        ],
       ),
     );
   }
