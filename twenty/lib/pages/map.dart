@@ -84,7 +84,7 @@ class _MyMapPageState extends State<MyMapPage> {
                 ),
           ElevatedButton(
               onPressed: () {
-                _gmc.animateCamera(
+                _gmc.moveCamera(
                   CameraUpdate.newCameraPosition(
                     CameraPosition(
                       target: LatLng(22.8251765, 91.0821882),
