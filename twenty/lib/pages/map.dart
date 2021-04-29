@@ -64,6 +64,7 @@ class _MyMapPageState extends State<MyMapPage> {
   GoogleMapController _gmc;
   Set<Marker> _marker = {
     Marker(
+      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
       draggable: true,
       onDragEnd: (LatLng _endLocation) {
         print(
