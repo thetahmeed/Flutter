@@ -62,6 +62,12 @@ class _MyMapPageState extends State<MyMapPage> {
   }
 
   GoogleMapController _gmc;
+  Set<Marker> _marker = {
+    Marker(markerId: MarkerId('1'), position: LatLng(22.8251765, 91.0821882)),
+    Marker(
+        markerId: MarkerId('2'),
+        position: LatLng(23.11038572981931, 90.93170788139105)),
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +82,7 @@ class _MyMapPageState extends State<MyMapPage> {
           _myLocation == null
               ? CircularProgressIndicator()
               : GoogleMap(
+                  markers: _marker,
                   mapType: MapType.normal,
                   initialCameraPosition: _myLocation,
                   onMapCreated: (GoogleMapController controller) {
