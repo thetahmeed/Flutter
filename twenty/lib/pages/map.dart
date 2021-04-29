@@ -64,6 +64,9 @@ class _MyMapPageState extends State<MyMapPage> {
   GoogleMapController _gmc;
   Set<Marker> _marker = {
     Marker(
+      onTap: () {
+        print('=======01');
+      },
       markerId: MarkerId('1'),
       infoWindow: InfoWindow(
         title: 'Your location',
@@ -74,6 +77,9 @@ class _MyMapPageState extends State<MyMapPage> {
       position: LatLng(22.8251765, 91.0821882),
     ),
     Marker(
+      onTap: () {
+        print('=======02');
+      },
       markerId: MarkerId('2'),
       infoWindow: InfoWindow(
         title: 'Your GF\'s location',
