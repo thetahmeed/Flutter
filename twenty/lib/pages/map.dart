@@ -82,20 +82,34 @@ class _MyMapPageState extends State<MyMapPage> {
                     _gmc = controller;
                   },
                 ),
-          ElevatedButton(
-              onPressed: () {
-                _gmc.moveCamera(
-                  CameraUpdate.newCameraPosition(
-                    CameraPosition(
-                      target: LatLng(22.8251765, 91.0821882),
-                      zoom: 8,
-                      tilt: 50,
-                      bearing: 50,
+          Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  _gmc.animateCamera(
+                    CameraUpdate.newCameraPosition(
+                      CameraPosition(
+                        target: LatLng(22.8251765, 91.0821882),
+                        zoom: 8,
+                        tilt: 50,
+                        bearing: 50,
+                      ),
                     ),
-                  ),
-                );
-              },
-              child: Text('Move to Noyakhali')),
+                  );
+                },
+                child: Text('Move to Noyakhali'),
+              ),
+              ElevatedButton(
+                onPressed: () async {
+                  var _pointLatLong =
+                      await _gmc.getLatLng(ScreenCoordinate(x: 200, y: 200));
+
+                  print('Lat and long: $_pointLatLong');
+                },
+                child: Text('Get lat & lang'),
+              ),
+            ],
+          ),
         ],
       ),
     );
