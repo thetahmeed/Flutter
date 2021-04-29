@@ -104,7 +104,10 @@ class _MyMapPageState extends State<MyMapPage> {
                   var _pointLatLong =
                       await _gmc.getLatLng(ScreenCoordinate(x: 200, y: 200));
 
+                  var _pointZoomLevel = await _gmc.getZoomLevel();
+
                   print('Lat and long: $_pointLatLong');
+                  print('Zoom level: $_pointZoomLevel');
                 },
                 child: Text('Get lat & lang'),
               ),
