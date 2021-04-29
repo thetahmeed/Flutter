@@ -87,7 +87,10 @@ class _MyMapPageState extends State<MyMapPage> {
                 _gmc.animateCamera(
                   CameraUpdate.newCameraPosition(
                     CameraPosition(
-                        target: LatLng(22.8251765, 91.0821882), zoom: 8),
+                      target: LatLng(22.8251765, 91.0821882),
+                      zoom: 8,
+                      tilt: 50,
+                    ),
                   ),
                 );
               },
