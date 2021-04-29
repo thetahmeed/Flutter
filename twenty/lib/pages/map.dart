@@ -63,10 +63,26 @@ class _MyMapPageState extends State<MyMapPage> {
 
   GoogleMapController _gmc;
   Set<Marker> _marker = {
-    Marker(markerId: MarkerId('1'), position: LatLng(22.8251765, 91.0821882)),
     Marker(
-        markerId: MarkerId('2'),
-        position: LatLng(23.11038572981931, 90.93170788139105)),
+      markerId: MarkerId('1'),
+      infoWindow: InfoWindow(
+        title: 'Your location',
+        onTap: () {
+          print('=======1');
+        },
+      ),
+      position: LatLng(22.8251765, 91.0821882),
+    ),
+    Marker(
+      markerId: MarkerId('2'),
+      infoWindow: InfoWindow(
+        title: 'Your GF\'s location',
+        onTap: () {
+          print('=======2');
+        },
+      ),
+      position: LatLng(23.11038572981931, 90.93170788139105),
+    ),
   };
 
   @override
