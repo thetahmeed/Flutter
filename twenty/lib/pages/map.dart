@@ -59,32 +59,42 @@ class _MyMapPageState extends State<MyMapPage> {
     super.initState();
     _getLocationPermission();
     _getCurrentLocation();
+    _setMarkerCustomImage();
   }
 
   GoogleMapController _gmc;
+
+  Future _setMarkerCustomImage() async {
+    _marker.add(
+      Marker(
+        visible: true,
+        icon: await BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, 'assets/img/pin.png'),
+        draggable: true,
+        onDragEnd: (LatLng _endLocation) {
+          print(
+              '=====================================New Location================');
+          print(_endLocation.latitude);
+          print(_endLocation.longitude);
+        },
+        onTap: () {
+          print('=======01');
+        },
+        markerId: MarkerId('1'),
+        infoWindow: InfoWindow(
+          title: 'Your location',
+          onTap: () {
+            print('=======1');
+          },
+        ),
+        position: LatLng(22.8251765, 91.0821882),
+      ),
+    );
+  }
+
   Set<Marker> _marker = {
     Marker(
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange),
-      draggable: true,
-      onDragEnd: (LatLng _endLocation) {
-        print(
-            '=====================================New Location================');
-        print(_endLocation.latitude);
-        print(_endLocation.longitude);
-      },
-      onTap: () {
-        print('=======01');
-      },
-      markerId: MarkerId('1'),
-      infoWindow: InfoWindow(
-        title: 'Your location',
-        onTap: () {
-          print('=======1');
-        },
-      ),
-      position: LatLng(22.8251765, 91.0821882),
-    ),
-    Marker(
+      visible: true,
       onTap: () {
         print('=======02');
       },
