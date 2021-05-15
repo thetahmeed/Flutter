@@ -168,3 +168,7 @@
 146. package : animation
 147. package : flutter_slidable
 148. RotatedBox
+
+### 9: nineteen:
+149. Get current location
+150. 
